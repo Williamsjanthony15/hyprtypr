@@ -37,7 +37,10 @@
 
 
 ## Kevin
-
+<ul>
+  <li> Made a slide </li>
+  <li> Added words </li>
+  <li> Did mo stuff </li>
 
 
 ## Tyler
