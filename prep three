@@ -1,0 +1,233 @@
+#Prep Two
+
+BrainStorm ideas!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+# GAMES
+
+Dancing DINO - 
+  Dino stays screen moving. Jump up and Duck down
+    Clicking button - event listener
+    Scrolling page - canvas 
+    obstacles - canvas
+    Difficulty levels - variable speed - event listener 
+    Constructor - possibilties
+    Local Storage - name, and score
+    user input - name
+    
+
+## Word Typing games - 
+  What does it do?
+    Accurcy and speed
+  How to do it 
+   - One attempt per word (Hangman fashion). Progressively faster, and harder words, less utilized words, "Spelling bee words - kevin" 
+  Difficulty
+    - Progressively faster, and harder words, less utilized words, "Spelling bee words - kevin"
+  Constructors, how to use? ways to intergrate
+    - Single word, Feeding the functions the individual words at a single given time.
+  Local Storage 
+    - Userame and Score, Words they got Correct and answered Incorrectly, (Stretch goal - Showing the error itself, red letters rendered for mispelled words)
+  User Input
+    - Name, and Words,
+  canvas needed?
+    - Yes, Based on animation. 
+      If animation is taken out, than canvas most likely not utilized.
+  Styling
+     - Word style (font, Color, Size, Animation)
+     - Hangman styling
+     - Input box styling
+     - background
+     - Structor HTML page
+
+Choose your own future game
+  What does it do
+    - Choice Making game, Yes or no, A or B
+  How to do it 
+    - Picking character(idk how to spell) 
+    - Each Choice Provides NEW choices. IE A or B
+  Difficulty -------------------------------------------------- On hold
+  Constructors:
+  Local Storage
+  User Input
+  canvas needed?
+  Styling?
+
+  
+ 
+# Practical
+
+## Vacation Builder
+    Word filtered and / or Activity filtered 
+  What does it do
+    Every choice you make gives you pertinent choices beyond that. To include Preferences / Filters
+    - Prompts  ( Vacation Type)
+      - Cascading Options (Order later)
+      - Location
+         - Activities
+      - Money (price)
+      -
+   - Styling potential
+   - 
+  How to do it 
+    - See below (Each Choice is a variable choice, Not Required.)
+  Difficulty
+  Constructors:
+    All locations have a seperated tree of specific filters. 
+  Local Storage
+    Name, Location needed, Price, Activities,  
+  User Input
+    Enter Name
+    Vacation wants
+  canvas needed
+    Screen Movement / transition to next choices
+  Styling
+    Pictures, Normal Styling, Background relative to end selection, Custom Fonts, 
+    (stretch goal - Animated responses 
+    IE: 
+     Location - Mountains
+                    Activities - Only able to select one
+                      SnowBoard
+                      Ski
+                      Hunt
+                      Climb
+                      (decide when i get there)
+                      ETC....
+                    Price (Only need to select one)
+                      Economical
+                      Expensive
+                      (More for the experience rather than price)
+                      etc....
+                      
+                        3 options for that filters
+                            3 Locations 
+                              2 Picture (one location, one Activity)
+                    
+      More parameters to include those above.
+                    
+     
+## Meme Generator
+  Creating Meme
+  Image Directory
+      What does it do
+         Choose your base
+         Combine memes 
+         Create Memes
+  How to do it 
+    Random Pictures, To choose from
+    Pick the image 
+      Brings you to another page to further the process
+      Fonts / Open text abilities 
+  Difficulty
+    n/a
+  Constructors:
+    For sure, image directory, Choices, Text applied, merging multiple pictures
+  Local Storage
+    Name, completed meme
+  User Input
+      name, Text on meme
+  canvas needed?
+    Potential
+  Styling?
+    relative.
+ 
+Covid Dress Up
+  Im not even sure what this is.
+  Dressing up for mom?
+      What does it do
+        Tells me what to wear, how to dress, does this match, do i look good? Covid.
+  How to do it 
+    A working tree of clothes, Rag doll, Dress up game, Shirts, Pants, Shoes, Hat, Watch, Socks, Underwear, Hair style, Glasses?, Sweater/Jacket?
+  Difficulty
+    n/a
+  Constructors:
+    LOTS - Clothing lines, Brands, Clothing Type, 
+  Local Storage
+    Chosen clothes, Name, Style 
+  User Input
+    Clothes to choose, names, Style
+  canvas needed?
+    Potentially
+  Styling?
+    background,text
+ 
+Turing Test?
+  "Allen Turing"
+  Imitation Game - Trying to have somebody communicate through text and have a response come back, to determine if they are human?? 
+    input text
+    recieve text
+    Are you a robot?
+    
+  What does it do
+    Conversation two ways as human as possible based on user input, Will find outcome, Timer included, 
+  How to do it 
+    Question based, Answering system, Calculated Questions. based on KEYWORDS, can keep the conversation going.
+  Difficulty
+    n/a
+  Constructors
+    Questions, Answers, Keywords, Topics.
+  Local Storage
+    Questions, answers, keywords, topics, names, 
+  User Input
+    ^^
+  canvas needed
+    Potential, Scrolling Text (Questions, answers)
+  Styling
+    Text, Background, Conversation dialog rendering, Detectable of human or robot. 
+  
+  
+
+
+
+Pitch IDEAS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+
+Word Typing games - 
+  What does it do?
+    Accurcy and speed
+  How to do it 
+   - One attempt per word (Hangman fashion). Progressively faster, and harder words, less utilized words, "Spelling bee words - kevin" 
+  Difficulty
+    - Progressively faster, and harder words, less utilized words, "Spelling bee words - kevin"
+  Constructors, how to use? ways to intergrate
+    - Single word, Feeding the functions the individual words at a single given time.
+  Local Storage 
+    - Userame and Score, Words they got Correct and answered Incorrectly, (Stretch goal - Showing the error itself, red letters rendered for mispelled words)
+  User Input
+    - Name, and Words,
+  canvas needed?
+    - Yes, Based on animation. 
+      If animation is taken out, than canvas most likely not utilized.
+  Styling
+     - Word style (font, Color, Size, Animation)
+     - Hangman styling
+     - Input box styling
+     - background
+     - Structor HTML page
+
+How would we have that in the data? Array, Variable, Objects, Different Arrays per difficulty... How would it work necessarily. Propertys (easy, medium, hard) 
+
+
+Turing Test?
+  "Allen Turing"
+  Imitation Game - Trying to have somebody communicate through text and have a response come back, to determine if they are human?? 
+    input text
+    recieve text
+    Are you a robot?
+    
+  What does it do
+    Conversation two ways as human as possible based on user input, Will find outcome, Timer included, 
+  How to do it 
+    Question based, Answering system, Calculated Questions. based on KEYWORDS, can keep the conversation going.
+  Difficulty
+    n/a
+  Constructors
+    Questions, Answers, Keywords, Topics.
+  Local Storage
+    Questions, answers, keywords, topics, names, 
+  User Input
+    ^^
+  canvas needed
+    Potential, Scrolling Text (Questions, answers)
+  Styling
+    Text, Background, Conversation dialog rendering, Detectable of human or robot.
+    
