@@ -57,6 +57,18 @@ body {
   padding-bottom: 100px; /* height of your footer */
 }
 
+.name_area {
+  background-color: black;
+  height: 80px; 
+  width: 40%; 
+  font-size: 1.5rem; 
+  font-weight: 600; 
+  margin: 15px; 
+  padding: 20px; 
+  border: 0px; 
+  box-shadow: black 5px 8px 5px; 
+} 
+
 .quote {
   background-color: blue;
   font-size: 1.5rem;
@@ -64,7 +76,7 @@ body {
   padding: 25pxl;
 }
 
-.text_area {
+.type_area {
   background-color: black;
   height: 80px; 
   width: 40%; 
@@ -76,6 +88,14 @@ body {
   box-shadow: black 5px 8px 5px; 
 } 
   
+.play_btn { 
+  display: none; 
+  background-color: green; 
+  font-size: 1.5rem; 
+  padding: 10px; 
+  border: 0px; 
+}
+
 .replay_btn { 
   display: none; 
   background-color: green; 
@@ -97,6 +117,7 @@ body {
 /* header */
 
 key {
+  /* display: inline-block; */
   font-family: 'Roboto Condensed', sans-serif;
   font-size: 25px;
   border: thick solid black;
@@ -104,6 +125,23 @@ key {
   padding: 25px;
   height: max-content;
   width: max-content;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+keyright {
+  /* display: inline-block; */
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 25px;
+  border: thick solid black;
+  margin: 10px;
+  padding: 25px;
+  height: max-content;
+  width: max-content;
+  position: relative;
+  top: 0;
+  right: 300;
 }
 
 #key-q:hover {

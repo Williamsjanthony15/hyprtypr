@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
   <title>HyprTypr</title>
@@ -12,21 +12,51 @@
 <body>
   <div class="main-container">
     <header>
+      <div class="key">
+        <key id="key-q">Q</key>
+        <key id="key-w">W</key>
+        <key id="key-e">E</key>
+        <key id="key-r">R</key>
+        <key id="key-t">T</key>
+        <key id="key-y">Y</key>
+      </div>
       <h1>Hypr Typr</h1>
-      <key id="key-q">Q</key>
-      <key id="key-w">W</key>
-      <key id="key-e">E</key>
-      <key id="key-r">R</key>
-      <key id="key-t">T</key>
-      <key id="key-y">Y</key>
+      <div class="keyright">
+        <key id="key-y">Y</key>
+        <key id="key-t">T</key>
+        <key id="key-r">R</key>
+        <key id="key-e">E</key>
+        <key id="key-w">W</key>
+        <key id="key-q">Q</key>
+      </div>
       <h2>Type as if your neck was on the line</h2>
     </header>
   </div>
   <main>
+    
     <section>
-
+      <article>
+        <h2>Test</h2>
+        <p>This is a typing game for horrible people that want to learn to type more good and have fun while learning. Typing is an essential tool whether you’re coding or writing an email to a loved one. The more accurately you are able to type quickly, you will have advantage over others, and maybe you’ll email your mother more often…</p>
+      </article>
     </section>
+
   </main>
+  
+  <div class="quote"> 
+    We're happy that you are here. What's your name? 
+  </div> 
+  <namearea class="name_area"
+    placeholder="Type here..."
+    oninput="processUserName()"
+    onfocus="startGame()"> 
+  </namearea> 
+    <button class="play_btn"
+    onclick="startGame()"> 
+    Play
+  </button> 
+</div> 
+  
   <script src=js/app.js> </script>
   <footer id="footer">
     <div class="navbar">
