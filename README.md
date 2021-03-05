@@ -1,6 +1,6 @@
 # hyprtypr
 typing with no 'E's - Typing Game
 
-Kevin Henry, Tyler Johnson, Dion Johnson, Anthony Williams
+COLAB - Kevin Henry, Tyler Johnson, Anthony Williams, Dion Johnson
 
 Tyler is here and typing a thing to fufill the ACP requirement.
