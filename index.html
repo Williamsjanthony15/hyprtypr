@@ -2,48 +2,88 @@
 <html lang="en">
 
 <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="shortcut icon" href="../../docs-assets/ico/favicon.png">
   <title>HyprTypr</title>
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/style.css">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Roboto+Condensed:wght@700&family=Special+Elite&display=swap" rel="stylesheet">
 </head>
-
+  
 <body>
-  <div class="main-container">
-    <header>
-      <div class="key">
+  <!-- <div class="main-container"> -->
+  <header>
+      <!-- <div class="key">
         <key id="key-q">Q</key>
         <key id="key-w">W</key>
         <key id="key-e">E</key>
         <key id="key-r">R</key>
         <key id="key-t">T</key>
         <key id="key-y">Y</key>
-      </div>
-      <h1>Hypr Typr</h1>
-      <div class="keyright">
+      </div> -->
+    <h1>Hypr Typr</h1>
+      <!-- <div class="keyright">
         <key id="key-y">Y</key>
         <key id="key-t">T</key>
         <key id="key-r">R</key>
         <key id="key-e">E</key>
         <key id="key-w">W</key>
         <key id="key-q">Q</key>
-      </div>
-      <h2>Type as if your neck was on the line</h2>
-    </header>
-  </div>
+      </div> -->
+    <h2>Type as if your neck was on the line</h2>
+  </header>
+<!-- </div> -->
   <main>
     
-    <section>
+    <!-- Introduction -->
+  <div class="column-layout">
+    <div class="main-column">
+      <h2>Main Column</h2>
+      <p>This is a typing game for horrible people that want to learn to type more good and have fun while learning. Typing is an essential tool whether you’re coding or writing an email to a loved one.</p>
+      <p>The more accurately you are able to type quickly, you will have advantage over others, and maybe you’ll email your mother more often…</p>
+    </div>
+
+    <div class="sidebar-one">
+      <h3>Sidebar One</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum modi nisi tenetur sint dignissimos nulla, blanditiis nesciunt.</p>
+    </div>
+
+    <div class="sidebar-two">
+      <h3>Sidebar Two</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum modi nisi tenetur sint dignissimos nulla, blanditiis nesciunt.</p>
+    </div>
+  </div>
+
+<!-- win lose hero -->
+<!-- <div class="banner"> -->
+<!--   <div class="center-me">Center Me Plz</div> -->
+<!-- </div> -->
+
+ <div class="name-input">
+  <form action="">
+    <div class="form-row">
+      <label for="userName">We're happy that you are here. What's your name?</label>
+      <input type="text" id="userName">
+    </div>
+  </form>
+</div>
+  </section>
+  </main>
+    <!-- <section>
       <article>
         <h2>Test</h2>
         <p>This is a typing game for horrible people that want to learn to type more good and have fun while learning. Typing is an essential tool whether you’re coding or writing an email to a loved one. The more accurately you are able to type quickly, you will have advantage over others, and maybe you’ll email your mother more often…</p>
       </article>
     </section>
 
-  </main>
+  </main> -->
   
-  <div class="quote"> 
+  <!-- <div class="quote"> 
     We're happy that you are here. What's your name? 
   </div> 
   <namearea class="name_area"
@@ -54,10 +94,15 @@
     <button class="play_btn"
     onclick="startGame()"> 
     Play
-  </button> 
-</div> 
+    </button> 
+    <label for=">Name (4 to 8 characters):</label>
+
+    <input type="text" id="name" name="name" required minlength="4" maxlength="8" size="10">
+
+</div>  -->
   
   <script src=js/app.js> </script>
+  <footer>
   <footer id="footer">
     <div class="navbar">
       <a href="#home" class="active">HOME</a>
@@ -65,7 +110,31 @@
       <a href="#about">ABOUT</a>
       <a href="#exit">GET ME OUT OF HERE</a>
     </div>
+    <!-- <div class="site-footer">
+      <a href="#0" class="logo">Logo</a>
+    <nav class="site-nav">
+      <ul>
+        <li class="active"><a href="#0">Home</a></li>
+        <li><a href="#help">HELP</a></li>
+        <li><a href="#about">ABOUT</a></li>
+        <li><a href="#exit">GET ME OUT OF HERE</a></li>
+      </ul>
+    </nav>
+    
+    <div class="actions">
+      <div class="dropdown">
+        Settings [ User @ Company ]
+        <ul>
+          <li><a href="#0">Sub Item 1</a></li>
+          <li><a href="#0">Sub Item 2</a></li>
+          <li><a href="#0">Sub Item 3</a></li>
+        </ul>
+      </div>
+      
+      <a href="#0" class="sign-out-link">Sign Out</a>
+    </div> -->
+    
   </footer>
-</body>
 
+</body>
 </html>

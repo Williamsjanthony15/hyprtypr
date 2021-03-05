@@ -1,50 +1,230 @@
 
-html,
-body {
-  background-color: white;
+html, body {
+  background-color: black;
   text-align: center;
   font-family: 'Lobster', cursive;
   font-family: 'Roboto Condensed', sans-serif;
   font-family: 'Special Elite', cursive;
-  }
+  color: white;
+  font-size: 28px;
+  padding-bottom: 100px;
+}
 
 
 
 
 
-  h1 {
-    font-family: 'Special Elite', cursive;
-    font-size: 4em;
-    text-align: center;
-    padding: 20px;
-  }
+h1 {
+  font-family: 'Special Elite', cursive;
+  font-size: 4em;
+  text-align: center;
+  padding: 20px;
+}
   
-  h2 {
+h2 {
   font-family: 'Lobster', cursive;
   font-size: 1.5em; 
   text-align: center;
-  color: blue;
-  }
-  
+  color: white;
+}
 
+h2, h3 {
+  margin: 0 0 .75em 0;
+}
 
-  main {
-    width: 960px;
-    margin: auto;
-  }
+h3 {
+  font-family: 'Lobster', cursive;
+  font-size: 1.5em; 
+  text-align: center;
+  color: white;
+}
 
-.container {
+input {
+  font-size: 14px;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+/* Start Button */
+/* label {
+  display: block;
+  font: 1rem 'Fira Sans', sans-serif;
+}
+
+/* input, */
+/* label {
+  margin: .4rem 0;
+}
+
+main {
+  width: 960px;
+  margin: auto;
+} */
+
+/* .container {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
+} */
 
-.heading {
+
+
+
+
+
+
+/* .heading {
   display: flex;
   align-items: center;
+} */
+
+.container {
+  padding: 0 5%;
+  margin: 0 auto;
+  max-width: 760px;
 }
 
+/* Name Input Box */
+.name-input {
+  max-width: 750px;
+  margin: 20px auto 0 auto;
+  padding: 30px;
+  background-color: black;
+}
 
+.form-row {
+  padding: 10px 0;
+  display: flex;
+}
+
+.form-row label {
+  padding-right: 10px;
+}
+
+.form-row input {
+  flex: 1;
+}
+
+/* second example */
+.column-layout {
+  max-width: 1300px;
+  background-color: black;
+  margin: 40px auto 0 auto;
+  line-height: 1.65;
+  padding: 20px 50px;
+  display: flex;
+}
+
+.main-column {
+  flex: 3;
+  order: 2;
+}
+
+.sidebar-one {
+  flex: 1;
+  order: 1;
+}
+
+.sidebar-two {
+  flex: 1;
+  order: 3;
+}
+
+/* third example */
+.call-outs-container {
+  max-width: 1400px;
+  margin: 40px auto 0 auto;
+}
+
+.call-out {
+  padding: 20px;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  flex-basis: 30%;
+}
+
+@media (min-width: 900px) {
+  .call-outs-container {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.call-out:nth-child(1) {background-color: #c0dbe2;}
+.call-out:nth-child(2) {background-color: #cdf1c3;}
+.call-out:nth-child(3) {background-color: #ccb9da;}
+
+/* fourth example */
+.fixed-size-container {
+  max-width: 1400px;
+  margin: 40px auto 0 auto;
+  background-color: #black;
+  padding: 30px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.fixed-size {
+  width: 150px;
+  height: 100px;
+  background-color: #black;
+  color: white;
+  line-height: 100px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 60px;
+  margin-bottom: 20px;
+}
+
+/* fifth example */
+.banner {
+  height: 400px;
+  max-width: 700px;
+  margin: 40px auto 40px auto;
+  background-color: #2a2a2a;
+  display: flex;
+}
+
+.center-me {
+  color: #FFF;
+  font-size: 50px;
+  margin: auto;
+}
+
+/* sixth example */
+.equal-height-container {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+}
+
+.first {
+  background-color: #FFF;
+  padding: 20px;
+  flex: 1;
+}
+
+.second {
+  background-color: yellow;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.second-a {
+  background-color: #c0dbe2;
+  flex: 1;
+}
+
+.second-b {
+  background-color: #cdf1c3;
+  flex: 1;
+}
+
+body {
+  font-family: 'Lobster', cursive;
+}
 
 
 
@@ -62,7 +242,8 @@ body {
   height: 80px; 
   width: 40%; 
   font-size: 1.5rem; 
-  font-weight: 600; 
+  font-weight: 600;
+  color: black; 
   margin: 15px; 
   padding: 20px; 
   border: 0px; 
@@ -118,6 +299,8 @@ body {
 
 key {
   /* display: inline-block; */
+  display: flex;
+  flex-direction: row;
   font-family: 'Roboto Condensed', sans-serif;
   font-size: 25px;
   border: thick solid black;
@@ -131,7 +314,10 @@ key {
 }
 
 keyright {
-  /* display: inline-block; */
+  display: inline-block;
+  /* display: flex;
+  flex-direction: row-reverse;
+  justify-content: end; */
   font-family: 'Roboto Condensed', sans-serif;
   font-size: 25px;
   border: thick solid black;
@@ -141,7 +327,7 @@ keyright {
   width: max-content;
   position: relative;
   top: 0;
-  right: 300;
+  right: 0;
 }
 
 #key-q:hover {
@@ -184,6 +370,7 @@ keyright {
   float: left;
   display: block;
   color: #f2f2f2;
+  font-family: 'Special Elite', cursive;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
@@ -200,4 +387,91 @@ keyright {
 .navbar a.active {
   background-color: #4CAF50;
   color: white;
+}
+
+@media (max-width: 600px) {
+  .site-footer {
+      flex-wrap: wrap;
+  }
+  .site-nav {
+    order: 2;
+    background: #333;
+    width: 100%;
+  }
+}
+
+.site-footer {
+  padding: 0 5%;
+  margin: 0 auto;
+  // max-width: 760px;
+  background: #0D1313;
+  color: white;
+  font-family: 'Special Elite', cursive;
+  font-size: 2em;
+  display: flex;
+
+  align-items: center;
+}
+
+.logo {
+  text-decoration: none;
+  color: white;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  padding: 10px;
+}
+.site-nav {
+  ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+  }
+  a {
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #CDD0D0;
+    padding: 20px;
+    display: inline-block;
+  }
+  .active {
+    a {
+      font-weight: bold;
+      color: #62DEBE;
+      background: darken(#62DEBE, 40%);
+    }
+  }
+}
+
+.dropdown {
+  ul {
+    display: none;
+  }
+
+}
+.dropdown:hover
+{
+  ul {
+    list-style: none;
+    display: block;
+    li a{
+      text-decoration: none;
+      padding: 20px;
+    }
+  }
+}
+
+.actions {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+}
+
+.sign-out-link {
+  color: #62DEBE;
+  font-size: 0.8rem;
+  margin-left: 10px;
+  text-transform: uppercase;
 }
