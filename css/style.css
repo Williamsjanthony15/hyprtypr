@@ -16,7 +16,7 @@ html, body {
 
 h1 {
   font-family: 'Special Elite', cursive;
-  font-size: 4em;
+  font-size: 3em;
   text-align: center;
   padding: 20px;
 }
@@ -67,15 +67,6 @@ main {
 } */
 
 
-
-
-
-
-
-/* .heading {
-  display: flex;
-  align-items: center;
-} */
 
 .container {
   padding: 0 5%;
@@ -194,15 +185,24 @@ main {
 
 /* sixth example */
 .equal-height-container {
-  max-width: 900px;
-  margin: 0 auto;
+  max-width: 1400px;
+  margin: 40px auto 0 auto;
+  background-color: #FFF;
+  padding: 10px 0;
   display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
 }
 
 .first {
   background-color: #FFF;
   padding: 20px;
   flex: 1;
+  color: black;
+  font-family: 'Special Elite', cursive;
+  font-size: 3em;
+  text-align: center;
 }
 
 .second {
@@ -210,6 +210,10 @@ main {
   flex: 1;
   display: flex;
   flex-direction: column;
+  color: black;
+  font-family: 'Special Elite', cursive;
+  font-size: 1em;
+  text-align: center;
 }
 
 .second-a {
@@ -219,6 +223,11 @@ main {
 
 .second-b {
   background-color: #cdf1c3;
+  flex: 1;
+}
+
+.second-c {
+  background-color: blue;
   flex: 1;
 }
 
@@ -294,6 +303,30 @@ body {
   color: green;
 }
 
+/* Trying to line up header opbjects and title */
+.header-section {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.header-section > div {
+  width: calc(100% / 3);
+}
+
+@media (max-width: 768px) {
+  .header-section > div {
+      width: 100%;
+      text-align: center;
+  }
+}
+
+
+
+/* .heading {
+  display: flex;
+  align-items: center;
+} */
+
 
 /* header */
 
@@ -302,10 +335,10 @@ key {
   /* display: flex; */
   flex-direction: row;
   font-family: 'Roboto Condensed', sans-serif;
-  font-size: 25px;
+  font-size: 20px;
   border: thick solid white;
   margin: 10px;
-  padding: 25px;
+  padding: 15px;
   height: max-content;
   width: max-content;
   position: relative;
@@ -319,7 +352,7 @@ keyright {
   flex-direction: row-reverse;
   justify-content: end; */
   font-family: 'Roboto Condensed', sans-serif;
-  font-size: 25px;
+  font-size: 20px;
   border: thick solid white;
   margin: 10px;
   padding: 25px;
