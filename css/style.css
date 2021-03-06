@@ -514,3 +514,7 @@ th, td {
   padding: 10px;
   border: 1px solid white;
 }
+
+#leaderboard-table {
+margin: auto;
+}
