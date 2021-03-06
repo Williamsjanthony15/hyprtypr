@@ -69,8 +69,11 @@ function wordGuess() {
   var guessEntry = document.getElementById('guessText').value;
   document.getElementById('entry').innerHTML = guessEntry;
   typedWords.push(guessEntry);
+
   let stringifiedWords = JSON.stringify(typedWords);
   localStorage.setItem('typedWords', stringifiedWords);
+  let stringifiedScore = JSON.stringify(allScores);
+  localStorage.setItem('all scores', stringifiedScore);
 }
 
 
@@ -103,13 +106,10 @@ function renderLeaderboardScores(){
   let trScore = document.createElement('td');
   trUser.appendChild(trScore);
   trScore.textContent = score;
-  let stringifiedScore = JSON.stringify(allScores);
-  localStorage.setItem('all scores', stringifiedScore);
 }
+
 
 new Leaderboard('tyler', 12);
 // wordGuess();
 renderLeaderboardHeader();
 renderLeaderboardScores();
-
-
