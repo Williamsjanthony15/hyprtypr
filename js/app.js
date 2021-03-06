@@ -15,25 +15,37 @@ let temp = document.querySelector('.time');
 let button = document.querySelector('button');
 let timerDiv = document.querySelector('.time');
 let scoreDiv = document.querySelector('.score');
-let points = 0;
+let
+  let points = 0;
 let seconds = 10;
 let totalGuess = 0;
-let wrongGuess= 10;
+let wrongGuess = 10;
 // button ID - play
 
-const wordList = [ 'mask', 'pizza', 'covid', 'pliers', 'camera', 'vacuum',
-  'pizazz', 'library', 'channel', 'vaccine', 'suburban', 'cemetery', 'calendar', 'separate', 'misspell', 'argument', 'assuming', 'definite', 'positive', 'negative', 'dachshund', 'necessary', 'possession', 'supposedly', 'quarantine', 'obstinance', 'millennium', 'processing', 'sovereignty', 'accommodate', 'fluorescent', 'mischievous', 'accidentally', 'questionnaire', 'pronunciation', 'capitalization' ];
+const wordList = ['mask', 'pizza', 'covid', 'pliers', 'camera', 'vacuum',
+  'pizazz', 'library', 'channel', 'vaccine', 'suburban', 'cemetery', 'calendar', 'separate', 'misspell', 'argument', 'assuming', 'definite', 'positive', 'negative', 'dachshund', 'necessary', 'possession', 'supposedly', 'quarantine', 'obstinance', 'millennium', 'processing', 'sovereignty', 'accommodate', 'fluorescent', 'mischievous', 'accidentally', 'questionnaire', 'pronunciation', 'capitalization'];
 console.log(wordList);
 
 function countdown() {
   points = 0;
-  let timer = setInterval(function() {
+  let timer = setInterval(function () {
     button.disabled = true;
-    seconds --;
+    seconds--;
     temp.gameHtml = seconds;
     if (seconds === 0) {
-      alert ('Game Over! You score is' + {points});
+      alert('Game Over! You score is' + { points });
     }
   }
   );
 }
+
+
+//Game Text Entry Box
+var guessEntry = document.getElementById('Input').value;
+
+function wordGuess () {
+  var guessentry = document.getElementById('guessText').value;
+  docmuent.getElementById('entry').innterHTML = guessentry;
+}
+
+ 
