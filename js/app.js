@@ -12,18 +12,17 @@ console.log('WWLND');
 // Scoring method
 // stretch goal -- Adding nested for loops seperate arrays
 
-let temp = document.querySelector('.time');
 let button = document.querySelector('button');
-let timerDiv = document.querySelector('.time');
-let scoreDiv = document.querySelector('.score');
+let timeRemaining = document.querySelector('timeRemaining');
+let score = document.querySelector('score');
+let countdown = document.querySelector('time');
 let points = 0;
 let totalGuess = 0;
 let wrongGuess= 10;
-let score = 0;
 let allScores = [];
 let username = 'tyler';
-let timePerWord = '10';
-let remaining = 10;
+let timePerWord = 10;
+
 
 
 const wordList = ['mask', 'pizza', 'covid', 'pliers', 'camera', 'vacuum',
@@ -33,38 +32,23 @@ const wordList = ['mask', 'pizza', 'covid', 'pliers', 'camera', 'vacuum',
 // Game Page
 
 
-
 function startGame() {
-  if (remaining === 0) {
-    remaining = 10;
-    incrementing();
-    document.querySelector('startGame').innerHTML = 'Pause';
-  } else {
-    remaining = 0;
-    document.querySelectorAll('startGame').innerHTML = 'Resume';
-  }
+  let timer = setInterval(function(){
+    button.disabled = true;
+    timePerWord --; 
+    countdown.innerHTML = timePerWord;
+    if(timePerWord === 0){
+      score.innerHTML = '0';
+      wordList.innerHTML = '';
+      button.innerHTML = false;
+      clearInterval(timer);
+      timePerWord = 10;
+      timeRemaining.innerHTML = '10';
+      button.disabled = false;
+    }
+  }, 1000);
 }
 
-function restart() {
-  remaining = 10;
-  timePerWord = 10;
-  document.querySelector('timer').innerHTML = '10';
-  document.querySelector('startGame').innerHTML = 'Start';
-}
-
-function incrementing() {
-  if (remaining === 1) {
-    setTimeout(function () {
-      timePerWord--;
-      let secs = Math.ceil(timePerWord / 10);
-      if (secs >= 10) {
-        secs = '10' - secs;
-      }
-      document.querySelector('timer').innerHTML = secs + 'Remaining';
-      incrementing();
-    }, 10);
-  }
-}
 
 function wordGuess() {
   var guessEntry = document.getElementById('guessText').value;
