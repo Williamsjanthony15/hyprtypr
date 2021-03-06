@@ -12,27 +12,27 @@ console.log('WWLND');
 // Scoring method
 // stretch goal -- Adding nested for loops seperate arrays
 
-// Fix this T
 let temp = document.querySelector('.time');
 let button = document.querySelector('button');
 let timerDiv = document.querySelector('.time');
 let scoreDiv = document.querySelector('.score');
 let points = 0;
-let seconds = 10;
 let totalGuess = 0;
 let wrongGuess= 10;
 let score = 0;
 let allScores = [];
 let username = 'tyler';
-// button ID - play
+let timePerWord = '10';
+let remaining = 10;
+
 
 const wordList = ['mask', 'pizza', 'covid', 'pliers', 'camera', 'vacuum',
-  'pizazz', 'library', 'channel', 'vaccine', 'suburban', 'cemetery', 'calendar', 'separate', 'misspell', 'argument', 'assuming', 'definite', 'positive', 'negative', 'dachshund', 'necessary', 'possession', 'supposedly', 'quarantine', 'obstinance', 'millennium', 'processing', 'sovereignty', 'accommodate', 'fluorescent', 'mischievous', 'accidentally', 'questionnaire', 'pronunciation', 'capitalization'];
-console.log(wordList);
-// Fix this T
+'pizazz', 'library', 'channel', 'vaccine', 'suburban', 'cemetery', 'calendar', 'separate', 'misspell', 'argument', 'assuming', 'definite', 'positive', 'negative', 'dachshund', 'necessary', 'possession', 'supposedly', 'quarantine', 'obstinance', 'millennium', 'processing', 'sovereignty', 'accommodate', 'fluorescent', 'mischievous', 'accidentally', 'questionnaire', 'pronunciation', 'capitalization'];
+// console.log(wordList);
 
-let timePerWord = 10;
-let remaining = 10;
+// Game Page
+
+
 
 function startGame() {
   if (remaining === 0) {
@@ -66,7 +66,13 @@ function incrementing() {
   }
 }
 
-// fix this ylerbranch
+function wordGuess() {
+  var guessEntry = document.getElementById('guessText').value;
+  document.getElementById('entry').innerHTML = guessEntry;
+}
+
+
+// LeaderBoard Page
 //constructor to generate allScores array
 //will then be saved to local storage
 function Leaderboard(username, score) {
@@ -90,23 +96,4 @@ function renderLeaderboardHeader () {
 // function renderLeaderboardScores
 new Leaderboard('tyler', 10);
 renderLeaderboardHeader();
-// fix this t
 
-
-var guessEntry = document.getElementById('Input').value;
-
-function wordGuess () {
-  var guessentry = document.getElementById('guessText').value;
-  docmuent.getElementById('entry').innterHTML = guessentry;
-}
-
-
-
-// let word = document.querySelector('.word');
-// let score = document.querySelector('.score');
-// let button = document.querySelector('button');
-// let timer = 10; //alotted amount of time per word 
-// let points = 0;
-// let totalGuess = 0;
-// let wrongGuessAllowed= 10;
-// fix this T
