@@ -22,7 +22,7 @@ let wrongGuess= 10;
 let score = 0;
 let allScores = [];
 let typedWords = [];
-let username = 'tyler';
+let username = 'Tyler';
 let timePerWord = '10';
 let remaining = 10;
 
@@ -32,8 +32,6 @@ const wordList = ['mask', 'pizza', 'covid', 'pliers', 'camera', 'vacuum',
 // console.log(wordList);
 
 // Game Page
-
-
 
 function startGame() {
   if (remaining === 0) {
@@ -77,6 +75,7 @@ function wordGuess() {
 
 
 // LeaderBoard Page
+
 //constructor to generate allScores array
 //will then be saved to local storage
 function Leaderboard(username, score) {
@@ -84,10 +83,6 @@ function Leaderboard(username, score) {
   this.score = score;
   allScores.push(this);
 }
-
-//saving allScores to local storage
-
-//saving typedWords to local storage
 
 //render leaderboard table to the DOM
 function renderLeaderboardHeader () {
@@ -101,13 +96,20 @@ function renderLeaderboardHeader () {
 }
 
 function renderLeaderboardScores(){
-  let tr = document.createElement('tr');
-  tr.textContent = score;
+  let tbody = document.getElementById('leaderboard-table');
+  let trUser = document.createElement('tr');
+  trUser.textContent = username;
+  tbody.appendChild(trUser);
+  let trScore = document.createElement('td');
+  trUser.appendChild(trScore);
+  trScore.textContent = score;
   let stringifiedScore = JSON.stringify(allScores);
   localStorage.setItem('all scores', stringifiedScore);
 }
+
 new Leaderboard('tyler', 12);
 // wordGuess();
 renderLeaderboardHeader();
+renderLeaderboardScores();
 
 
