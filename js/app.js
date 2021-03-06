@@ -26,15 +26,6 @@ let allScores = [];
 let username = 'tyler';
 // button ID - play
 
-const wordList = [ 'mask', 'pizza', 'covid', 'pliers', 'camera', 'vacuum',
-  'pizazz', 'library', 'channel', 'vaccine', 'suburban', 'cemetery', 'calendar', 'separate', 'misspell', 'argument', 'assuming', 'definite', 'positive', 'negative', 'dachshund', 'necessary', 'possession', 'supposedly', 'quarantine', 'obstinance', 'millennium', 'processing', 'sovereignty', 'accommodate', 'fluorescent', 'mischievous', 'accidentally', 'questionnaire', 'pronunciation', 'capitalization' ];
-//console.log(wordList);
-// fix this T
-
-
-
-
-
 const wordList = ['mask', 'pizza', 'covid', 'pliers', 'camera', 'vacuum',
   'pizazz', 'library', 'channel', 'vaccine', 'suburban', 'cemetery', 'calendar', 'separate', 'misspell', 'argument', 'assuming', 'definite', 'positive', 'negative', 'dachshund', 'necessary', 'possession', 'supposedly', 'quarantine', 'obstinance', 'millennium', 'processing', 'sovereignty', 'accommodate', 'fluorescent', 'mischievous', 'accidentally', 'questionnaire', 'pronunciation', 'capitalization'];
 console.log(wordList);
@@ -102,20 +93,12 @@ renderLeaderboardHeader();
 // fix this t
 
 
+var guessEntry = document.getElementById('Input').value;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+function wordGuess () {
+  var guessentry = document.getElementById('guessText').value;
+  docmuent.getElementById('entry').innterHTML = guessentry;
+}
 
 
 
