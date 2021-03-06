@@ -38,7 +38,7 @@ function restart() {
   remaining = 10;
   timePerWord = 10;
   document.querySelector('timer').innerHTML = '10';
-  document.querySelector('startGame').innerHTML = 'start';
+  document.querySelector('startGame').innerHTML = 'Start';
 }
 
 function incrementing() {
