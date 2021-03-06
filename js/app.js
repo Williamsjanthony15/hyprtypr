@@ -12,21 +12,48 @@ console.log('WWLND');
 // Scoring method
 // stretch goal -- Adding nested for loops seperate arrays
 
-let wrongGuessAllow = 10;
-let timePerWord = (10, 'seconds');
 
 
 
 
-const wordList = [ 'mask', 'pizza', 'covid', 'pliers', 'camera', 'vacuum',
-'pizazz', 'library', 'channel', 'vaccine', 'suburban', 'cemetery', 'calendar', 'separate', 'misspell', 'argument', 'assuming', 'definite', 'positive', 'negative', 'dachshund', 'necessary', 'possession', 'supposedly', 'quarantine', 'obstinance', 'millennium', 'processing', 'sovereignty', 'accommodate', 'fluorescent', 'mischievous', 'accidentally', 'questionnaire', 'pronunciation', 'capitalization' ];
+const wordList = ['mask', 'pizza', 'covid', 'pliers', 'camera', 'vacuum',
+  'pizazz', 'library', 'channel', 'vaccine', 'suburban', 'cemetery', 'calendar', 'separate', 'misspell', 'argument', 'assuming', 'definite', 'positive', 'negative', 'dachshund', 'necessary', 'possession', 'supposedly', 'quarantine', 'obstinance', 'millennium', 'processing', 'sovereignty', 'accommodate', 'fluorescent', 'mischievous', 'accidentally', 'questionnaire', 'pronunciation', 'capitalization'];
 console.log(wordList);
 
-function getWord() {
-  return Math.floor(Math.floor() * wordList.length);
+let timePerWord = 10;
+let remaining = 10;
+
+function startGame() {
+  if (remaining === 0) {
+    remaining = 10;
+    incrementing();
+    document.querySelector('startGame').innerHTML = 'Pause';
+  } else {
+    remaining = 0;
+    document.querySelectorAll('startGame').innerHTML = 'Resume';
+  }
 }
 
-function 
+function restart() {
+  remaining = 10;
+  timePerWord = 10;
+  document.querySelector('timer').innerHTML = '10';
+  document.querySelector('startGame').innerHTML = 'start';
+}
+
+function incrementing() {
+  if (remaining === 1) {
+    setTimeout(function () {
+      timePerWord--;
+      let secs = Math.ceil(timePerWord / 10);
+      if (secs >= 10) {
+        secs = '10' - secs;
+      }
+      document.querySelector('timer').innerHTML = secs + 'Remaining';
+      incrementing();
+    }, 10);
+  }
+}
 
 
 
@@ -54,45 +81,3 @@ function
 // let points = 0;
 // let totalGuess = 0;
 // let wrongGuessAllowed= 10;
-
-// function timerStart() {
-//   if (startButton = 'true') {
-//     for (let i = 0; i < 10; i--;) {
-//       console.log(timerStart);
-//     }
-//     })
-//   }
-//   if (timer === 0) {
-//     timerReset();
-//   }
-// }
-
-// function timerReset() {
-//   if (timer === 0) {
-//     setTimeout(function(){
-//       time--;
-//       let seconds = Math.floor(time / 10);
-//       if (seconds <=)
-//     })
-//   }
-// }
-
-// function incremental() {
-//   if (timer === 1) {
-//     setTimeout(function(){
-//     time--;
-//     let seconds = Math.floor(time / 10);
-//     if (seconds <= 9) {
-//       seconds = '0' + seconds;
-//     }
-//   };
-// }
-// }
-// function wordTimer() {
-//   points = 0;
-//   let timer = setInterval(function(){
-//     timeCounter --;
-//     if (timeCounter === 0) {
-//  }
-//   });
-// }
