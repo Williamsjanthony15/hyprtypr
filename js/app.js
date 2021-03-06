@@ -21,6 +21,7 @@ let totalGuess = 0;
 let wrongGuess= 10;
 let score = 0;
 let allScores = [];
+let typedWords = [];
 let username = 'tyler';
 let timePerWord = '10';
 let remaining = 10;
@@ -69,6 +70,9 @@ function incrementing() {
 function wordGuess() {
   var guessEntry = document.getElementById('guessText').value;
   document.getElementById('entry').innerHTML = guessEntry;
+  typedWords.push(guessEntry);
+  let stringifiedWords = JSON.stringify(typedWords);
+  localStorage.setItem('typedWords', stringifiedWords);
 }
 
 
@@ -82,18 +86,28 @@ function Leaderboard(username, score) {
 }
 
 //saving allScores to local storage
-let stringifiedScore = JSON.stringify(allScores);
-localStorage.setItem('hyprtypr', stringifiedScore);
+
+//saving typedWords to local storage
 
 //render leaderboard table to the DOM
 function renderLeaderboardHeader () {
   let header = document.getElementById('leaderboard-table');
-  let th = document.createElement('th');
-  th.textContent = `${username} 10`;
-  header.appendChild(th);
+  let thUser = document.createElement('th');
+  thUser.textContent = 'Player';
+  let thScore = document.createElement('th');
+  thScore.textContent = 'Score';
+  header.appendChild(thUser);
+  header.appendChild(thScore);
 }
 
-// function renderLeaderboardScores
-new Leaderboard('tyler', 10);
+function renderLeaderboardScores(){
+  let tr = document.createElement('tr');
+  tr.textContent = score;
+  let stringifiedScore = JSON.stringify(allScores);
+  localStorage.setItem('all scores', stringifiedScore);
+}
+new Leaderboard('tyler', 12);
+// wordGuess();
 renderLeaderboardHeader();
+
 
