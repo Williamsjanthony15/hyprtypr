@@ -508,3 +508,13 @@ keyright {
   margin-left: 10px;
   text-transform: uppercase;
 }
+
+/* leaderboard table */
+th, td, tr {
+  padding: 10px;
+  border: 1px solid white;
+}
+
+#leaderboard-table {
+margin: auto;
+}

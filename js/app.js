@@ -20,8 +20,11 @@ let points = 0;
 let totalGuess = 0;
 let wrongGuess = 10;
 let allScores = [];
-let username = '';
-let timePerWord = 10;
+let typedWords = [];
+let username = 'Tyler';
+let usernameArray = [];
+let timePerWord = '10';
+let remaining = 10;
 let startTimer = document.getElementById('start');
 
 
@@ -30,7 +33,6 @@ const wordList = ['mask', 'pizza', 'covid', 'pliers', 'camera', 'vacuum',
 // console.log(wordList);
 
 // Game Page
-
 
 function startGame() {
   let timer = setInterval(function () {
@@ -55,9 +57,15 @@ function startGame() {
 function wordGuess() {
   var guessEntry = document.getElementById('guessText').value;
   document.getElementById('entry').innerHTML = guessEntry;
-  console.log('clicked');
+  typedWords.push(guessEntry);
+
 }
 
+//to be added at end of game to store
+let stringifiedWords = JSON.stringify(typedWords);
+localStorage.setItem('typedWords', stringifiedWords);
+let stringifiedScore = JSON.stringify(allScores);
+localStorage.setItem('all scores', stringifiedScore);
 
 
 
@@ -81,6 +89,7 @@ startTimer.addEventListener("click", countdownTimer);
 
 
 // LeaderBoard Page
+
 //constructor to generate allScores array
 //will then be saved to local storage
 function Leaderboard(username, score) {
@@ -89,18 +98,32 @@ function Leaderboard(username, score) {
   allScores.push(this);
 };
 
-//saving allScores to local storage
-let stringifiedScore = JSON.stringify(allScores);
-localStorage.setItem('hyprtypr', stringifiedScore);
-
 //render leaderboard table to the DOM
 function renderLeaderboardHeader() {
   let header = document.getElementById('leaderboard-table');
-  let th = document.createElement('th');
-  th.textContent = `${username} 10`;
-  header.appendChild(th);
+  let thUser = document.createElement('th');
+  thUser.textContent = 'Player';
+  let thScore = document.createElement('th');
+  thScore.textContent = 'Score';
+  header.appendChild(thUser);
+  header.appendChild(thScore);
 }
 
-// function renderLeaderboardScores
-new Leaderboard('tyler', 10);
+// let retrievedUsers = localStorage.getItem('username');
+
+function renderLeaderboardScores(){
+  // let retrievedUsers = usernameArray;
+  let tbody = document.getElementById('leaderboard-table');
+  let trUser = document.createElement('tr');
+  trUser.textContent = username;
+  tbody.appendChild(trUser);
+  let trScore = document.createElement('td');
+  trUser.appendChild(trScore);
+  trScore.textContent = score;
+}
+
+new Leaderboard('tyler', 12);
+
 renderLeaderboardHeader();
+renderLeaderboardScores();
+
