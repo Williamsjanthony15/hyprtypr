@@ -19,6 +19,7 @@ let score = document.getElementById('score');
 let points = 0;
 let totalGuess = 0;
 let wrongGuess = 10;
+let score = 0;
 let allScores = [];
 let typedWords = [];
 let username = 'Tyler';
@@ -54,9 +55,20 @@ function startGame() {
 
 
 
+//word generator and score -dj
 function wordGuess() {
-  var guessEntry = document.getElementById('guessText').value;
+  var guessEntry = document.getElementById('guessText').value.toUpperCase();
+  console.log(totalGuess);
   document.getElementById('entry').innerHTML = guessEntry;
+  // renderWordGenerator();
+  console.log(guessEntry, wordList[totalGuess]);
+  if (guessEntry === wordList[totalGuess].toUpperCase()) {
+    score++;
+    console.log("success");
+  }
+  totalGuess++;
+  document.getElementById('guessText').value ='';
+  document.getElementById('wordGenerator').innerHTML = wordList[totalGuess];
   typedWords.push(guessEntry);
 
 }
@@ -122,7 +134,20 @@ function renderLeaderboardScores(){
   trScore.textContent = score;
 }
 
-new Leaderboard('tyler', 12);
+
+// word generator word-dj
+
+
+function renderWordGenerator() {
+  document.getElementById('wordGenerator').innerHTML = wordList[totalGuess];
+
+}
+
+renderWordGenerator();
+
+
+// function renderLeaderboardScores
+new Leaderboard('tyler', 10);
 
 renderLeaderboardHeader();
 renderLeaderboardScores();
