@@ -18,7 +18,7 @@ let timerDiv = document.querySelector('.time');
 let scoreDiv = document.querySelector('.score');
 let points = 0;
 let totalGuess = 0;
-let wrongGuess= 10;
+let wrongGuess = 10;
 let score = 0;
 let allScores = [];
 let username = 'tyler';
@@ -27,7 +27,7 @@ let remaining = 10;
 
 
 const wordList = ['mask', 'pizza', 'covid', 'pliers', 'camera', 'vacuum',
-'pizazz', 'library', 'channel', 'vaccine', 'suburban', 'cemetery', 'calendar', 'separate', 'misspell', 'argument', 'assuming', 'definite', 'positive', 'negative', 'dachshund', 'necessary', 'possession', 'supposedly', 'quarantine', 'obstinance', 'millennium', 'processing', 'sovereignty', 'accommodate', 'fluorescent', 'mischievous', 'accidentally', 'questionnaire', 'pronunciation', 'capitalization'];
+  'pizazz', 'library', 'channel', 'vaccine', 'suburban', 'cemetery', 'calendar', 'separate', 'misspell', 'argument', 'assuming', 'definite', 'positive', 'negative', 'dachshund', 'necessary', 'possession', 'supposedly', 'quarantine', 'obstinance', 'millennium', 'processing', 'sovereignty', 'accommodate', 'fluorescent', 'mischievous', 'accidentally', 'questionnaire', 'pronunciation', 'capitalization'];
 // console.log(wordList);
 
 // Game Page
@@ -66,9 +66,20 @@ function incrementing() {
   }
 }
 
+//word generator and score -dj
 function wordGuess() {
-  var guessEntry = document.getElementById('guessText').value;
+  var guessEntry = document.getElementById('guessText').value.toUpperCase();
+  console.log(totalGuess);
   document.getElementById('entry').innerHTML = guessEntry;
+  // renderWordGenerator();
+  console.log(guessEntry, wordList[totalGuess]);
+  if (guessEntry === wordList[totalGuess].toUpperCase()) {
+    score++;
+    console.log("success");
+  }
+  totalGuess++;
+  document.getElementById('guessText').value ='';
+  document.getElementById('wordGenerator').innerHTML = wordList[totalGuess];
 }
 
 
@@ -86,12 +97,23 @@ let stringifiedScore = JSON.stringify(allScores);
 localStorage.setItem('hyprtypr', stringifiedScore);
 
 //render leaderboard table to the DOM
-function renderLeaderboardHeader () {
+function renderLeaderboardHeader() {
   let header = document.getElementById('leaderboard-table');
   let th = document.createElement('th');
   th.textContent = `${username} 10`;
   header.appendChild(th);
 }
+
+// word generator word-dj
+
+
+function renderWordGenerator() {
+  document.getElementById('wordGenerator').innerHTML = wordList[totalGuess];
+
+}
+
+renderWordGenerator();
+
 
 // function renderLeaderboardScores
 new Leaderboard('tyler', 10);
