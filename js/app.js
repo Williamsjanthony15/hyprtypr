@@ -23,6 +23,7 @@ let score = 0;
 let allScores = [];
 let typedWords = [];
 let username = 'Tyler';
+let usernameArray = [];
 let timePerWord = '10';
 let remaining = 10;
 
@@ -69,13 +70,13 @@ function wordGuess() {
   var guessEntry = document.getElementById('guessText').value;
   document.getElementById('entry').innerHTML = guessEntry;
   typedWords.push(guessEntry);
-
-  let stringifiedWords = JSON.stringify(typedWords);
-  localStorage.setItem('typedWords', stringifiedWords);
-  let stringifiedScore = JSON.stringify(allScores);
-  localStorage.setItem('all scores', stringifiedScore);
 }
 
+//to be added at end of game to store
+let stringifiedWords = JSON.stringify(typedWords);
+localStorage.setItem('typedWords', stringifiedWords);
+let stringifiedScore = JSON.stringify(allScores);
+localStorage.setItem('all scores', stringifiedScore);
 
 // LeaderBoard Page
 
@@ -98,7 +99,10 @@ function renderLeaderboardHeader () {
   header.appendChild(thScore);
 }
 
+// let retrievedUsers = localStorage.getItem('username');
+
 function renderLeaderboardScores(){
+  // let retrievedUsers = usernameArray;
   let tbody = document.getElementById('leaderboard-table');
   let trUser = document.createElement('tr');
   trUser.textContent = username;
@@ -110,6 +114,6 @@ function renderLeaderboardScores(){
 
 
 new Leaderboard('tyler', 12);
-// wordGuess();
+
 renderLeaderboardHeader();
 renderLeaderboardScores();
