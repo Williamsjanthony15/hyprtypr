@@ -15,10 +15,11 @@ console.log('WWLND');
 let countdown = document.getElementById('time');
 let timeRemaining = document.getElementById('timeRemaining');
 let word = document.querySelector('word');
-let score = document.getElementById('score');
+let scored = document.getElementById('score');
 let points = 0;
 let totalGuess = 0;
 let wrongGuess = 10;
+let score = 0;
 let allScores = [];
 let typedWords = [];
 let username = 'Tyler';
@@ -41,12 +42,13 @@ function startGame() {
     countdown.innerHTML = timePerWord;
     if (timePerWord === 0) {
       console.log(points);
-      score.innerHTML = '0';
-      wordList.innerHTML = '';
+      // score.innerHTML = '0';
+      // wordList.innerHTML = '';
       timeRemaining.innerHTML = '10';
-      startTimer.disabled = false;
+      startTimer.disabled = true;
     }
   }, 1000);
+  startTimer.removeEventListener('click', startGame);
 }
 
 
@@ -54,11 +56,34 @@ function startGame() {
 
 
 
+//word generator and score -dj
 function wordGuess() {
-  var guessEntry = document.getElementById('guessText').value;
+  var guessEntry = document.getElementById('guessText').value.toUpperCase();
+  console.log(totalGuess);
   document.getElementById('entry').innerHTML = guessEntry;
+  // renderWordGenerator();
+  console.log(guessEntry, wordList[totalGuess]);
+  if (guessEntry === wordList[totalGuess].toUpperCase()) {
+    score++;
+    console.log("success");
+  }
+  totalGuess++;
+  document.getElementById('guessText').value = '';
+  document.getElementById('wordGenerator').innerHTML = wordList[totalGuess];
   typedWords.push(guessEntry);
-
+  // let timer = setInterval(function () {
+  //   startTimer.disabled = false;
+  //   timePerWord--;
+  //   countdown.innerHTML = timePerWord;
+  //   if (timePerWord === 0) {
+  //     console.log(points);
+  //     // score.innerHTML = '0';
+  //     // wordList.innerHTML = '';
+  //     timeRemaining.innerHTML = '10';
+  //     startTimer.disabled = false;
+  //   }
+  // }, 1000);
+  timePerWord = 11;
 }
 
 //to be added at end of game to store
@@ -69,13 +94,7 @@ localStorage.setItem('all scores', stringifiedScore);
 
 
 
-
-function countdownTimer(e) {
-  startGame();
-}
-
-
-startTimer.addEventListener("click", countdownTimer);
+startTimer.addEventListener("click", startGame);
 
 
 
@@ -125,7 +144,19 @@ function renderLeaderboardScores() {
 }
 
 
-new Leaderboard('tyler', 8);
+// word generator word-dj
+
+
+function renderWordGenerator() {
+  document.getElementById('wordGenerator').innerHTML = wordList[totalGuess];
+
+}
+
+renderWordGenerator();
+
+
+// function renderLeaderboardScores
+new Leaderboard('tyler', 10);
 
 renderLeaderboardHeader();
 renderLeaderboardScores();
