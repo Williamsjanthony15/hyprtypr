@@ -15,7 +15,7 @@ console.log('WWLND');
 let countdown = document.getElementById('time');
 let timeRemaining = document.getElementById('timeRemaining');
 let word = document.querySelector('word');
-let score = document.getElementById('score');
+let scored = document.getElementById('score');
 let points = 0;
 let totalGuess = 0;
 let wrongGuess = 10;
@@ -42,12 +42,13 @@ function startGame() {
     countdown.innerHTML = timePerWord;
     if (timePerWord === 0) {
       console.log(points);
-      score.innerHTML = '0';
-      wordList.innerHTML = '';
+      // score.innerHTML = '0';
+      // wordList.innerHTML = '';
       timeRemaining.innerHTML = '10';
-      startTimer.disabled = false;
+      startTimer.disabled = true;
     }
   }, 1000);
+  startTimer.removeEventListener('click', startGame);
 }
 
 
@@ -67,10 +68,22 @@ function wordGuess() {
     console.log("success");
   }
   totalGuess++;
-  document.getElementById('guessText').value ='';
+  document.getElementById('guessText').value = '';
   document.getElementById('wordGenerator').innerHTML = wordList[totalGuess];
   typedWords.push(guessEntry);
-
+  // let timer = setInterval(function () {
+  //   startTimer.disabled = false;
+  //   timePerWord--;
+  //   countdown.innerHTML = timePerWord;
+  //   if (timePerWord === 0) {
+  //     console.log(points);
+  //     // score.innerHTML = '0';
+  //     // wordList.innerHTML = '';
+  //     timeRemaining.innerHTML = '10';
+  //     startTimer.disabled = false;
+  //   }
+  // }, 1000);
+  timePerWord = 11;
 }
 
 //to be added at end of game to store
@@ -81,13 +94,7 @@ localStorage.setItem('all scores', stringifiedScore);
 
 
 
-
-function countdownTimer(e) {
-  startGame();
-}
-
-
-startTimer.addEventListener("click", countdownTimer);
+startTimer.addEventListener("click", startGame);
 
 
 
@@ -123,7 +130,7 @@ function renderLeaderboardHeader() {
 
 // let retrievedUsers = localStorage.getItem('username');
 
-function renderLeaderboardScores(){
+function renderLeaderboardScores() {
   // let retrievedUsers = usernameArray;
   let tbody = document.getElementById('leaderboard-table');
   let trUser = document.createElement('tr');
