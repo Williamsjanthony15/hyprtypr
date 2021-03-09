@@ -18,7 +18,7 @@ let timerDiv = document.querySelector('.time');
 let scoreDiv = document.querySelector('.score');
 let points = 0;
 let totalGuess = 0;
-let wrongGuess= 10;
+let wrongGuess = 10;
 let score = 0;
 let allScores = [];
 let typedWords = [];
@@ -29,7 +29,7 @@ let remaining = 10;
 
 
 const wordList = ['mask', 'pizza', 'covid', 'pliers', 'camera', 'vacuum',
-'pizazz', 'library', 'channel', 'vaccine', 'suburban', 'cemetery', 'calendar', 'separate', 'misspell', 'argument', 'assuming', 'definite', 'positive', 'negative', 'dachshund', 'necessary', 'possession', 'supposedly', 'quarantine', 'obstinance', 'millennium', 'processing', 'sovereignty', 'accommodate', 'fluorescent', 'mischievous', 'accidentally', 'questionnaire', 'pronunciation', 'capitalization'];
+  'pizazz', 'library', 'channel', 'vaccine', 'suburban', 'cemetery', 'calendar', 'separate', 'misspell', 'argument', 'assuming', 'definite', 'positive', 'negative', 'dachshund', 'necessary', 'possession', 'supposedly', 'quarantine', 'obstinance', 'millennium', 'processing', 'sovereignty', 'accommodate', 'fluorescent', 'mischievous', 'accidentally', 'questionnaire', 'pronunciation', 'capitalization'];
 // console.log(wordList);
 
 // Game Page
@@ -89,7 +89,7 @@ function Leaderboard(username, score) {
 }
 
 //render leaderboard table to the DOM
-function renderLeaderboardHeader () {
+function renderLeaderboardHeader() {
   let header = document.getElementById('leaderboard-table');
   let thUser = document.createElement('th');
   thUser.textContent = 'Player';
@@ -101,19 +101,21 @@ function renderLeaderboardHeader () {
 
 // let retrievedUsers = localStorage.getItem('username');
 
-function renderLeaderboardScores(){
+function renderLeaderboardScores() {
   // let retrievedUsers = usernameArray;
   let tbody = document.getElementById('leaderboard-table');
-  let trUser = document.createElement('tr');
-  trUser.textContent = username;
-  tbody.appendChild(trUser);
-  let trScore = document.createElement('td');
-  trUser.appendChild(trScore);
-  trScore.textContent = score;
+  for (let i = 0; i < allScores.length; i++) {
+    let trUser = document.createElement('tr');
+    trUser.textContent = allScores[i].username;
+    tbody.appendChild(trUser);
+    let trScore = document.createElement('td');
+    trUser.appendChild(trScore);
+    trScore.textContent = allScores[i].score;
+  }
 }
 
 
-new Leaderboard('tyler', 12);
+new Leaderboard('tyler', 8);
 
 renderLeaderboardHeader();
 renderLeaderboardScores();
