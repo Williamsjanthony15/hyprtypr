@@ -133,12 +133,14 @@ function renderLeaderboardHeader() {
 function renderLeaderboardScores() {
   // let retrievedUsers = usernameArray;
   let tbody = document.getElementById('leaderboard-table');
-  let trUser = document.createElement('tr');
-  trUser.textContent = username;
-  tbody.appendChild(trUser);
-  let trScore = document.createElement('td');
-  trUser.appendChild(trScore);
-  trScore.textContent = score;
+  for (let i = 0; i < allScores.length; i++) {
+    let trUser = document.createElement('tr');
+    trUser.textContent = allScores[i].username;
+    tbody.appendChild(trUser);
+    let trScore = document.createElement('td');
+    trUser.appendChild(trScore);
+    trScore.textContent = allScores[i].score;
+  }
 }
 
 
