@@ -76,12 +76,14 @@ function wordGuess() {
     console.log('Great Success',score);
   }
   totalGuess++;
+
   document.getElementById('guessText').value = '';
   document.getElementById('wordGenerator').innerHTML = wordList[totalGuess];
   typedWords.push(guessEntry);
   timePerWord = 11;
 }
 
+<<<<<<< HEAD
 let gameInput = document.getElementById('guessText');
 gameInput.addEventListener("keyup", function(e){
   e.preventDefault();
@@ -91,6 +93,15 @@ gameInput.addEventListener("keyup", function(e){
     entry.click();
   }
 });
+=======
+// var input = document.getElementById('wordGuess');
+// input.addEventListener('onKeyUp') {
+//   if (keyCode === 13) {
+//     preventDefault();
+//     document.getElementById('gameButton').click();
+//   }
+// }
+>>>>>>> 1e00c5d809b42ff9b6f1a5ef98c5fd0e7b787f35
 
 //to be added at end of game to store
 let stringifiedWords = JSON.stringify(typedWords);
@@ -123,32 +134,31 @@ function Leaderboard(username, score) {
   allScores.push(this);
 }
 
-
 //render leaderboard table to the DOM
-function renderLeaderboardHeader() {
-  let header = document.getElementById('leaderboard-table');
-  let thUser = document.createElement('th');
-  thUser.textContent = 'Player';
-  let thScore = document.createElement('th');
-  thScore.textContent = 'Score';
-  header.appendChild(thUser);
-  header.appendChild(thScore);
-}
+// function renderLeaderboardHeader() {
+//   let header = document.getElementById('leaderboard-table');
+//   let thUser = document.createElement('th');
+//   thUser.textContent = 'Player';
+//   let thScore = document.createElement('th');
+//   thScore.textContent = 'Score';
+//   header.appendChild(thUser);
+//   header.appendChild(thScore);
+// }
 
 // let retrievedUsers = localStorage.getItem('username');
 
-function renderLeaderboardScores() {
-  // let retrievedUsers = usernameArray;
-  let tbody = document.getElementById('leaderboard-table');
-  for (let i = 0; i < allScores.length; i++) {
-    let trUser = document.createElement('tr');
-    trUser.textContent = allScores[i].username;
-    tbody.appendChild(trUser);
-    let trScore = document.createElement('td');
-    trUser.appendChild(trScore);
-    trScore.textContent = allScores[i].score;
-  }
-}
+// function renderLeaderboardScores() {
+//   // let retrievedUsers = usernameArray;
+//   let tbody = document.getElementById('leaderboard-table');
+//   for (let i = 0; i < allScores.length; i++) {
+//     let trUser = document.createElement('tr');
+//     trUser.textContent = allScores[i].username;
+//     tbody.appendChild(trUser);
+//     let trScore = document.createElement('td');
+//     trUser.appendChild(trScore);
+//     trScore.textContent = allScores[i].score;
+//   }
+// }
 
 
 // word generator word-dj
@@ -160,7 +170,7 @@ function renderWordGenerator() {
 }
 
 renderWordGenerator();
-
+wordGuess();
 
 // function renderLeaderboardScores
 new Leaderboard('tyler', 10);
