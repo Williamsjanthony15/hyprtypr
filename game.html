@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,7 +12,9 @@
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/game.css">
   <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Lobster&family=Roboto:wght@500&family=Special+Elite&family=Yellowtail&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lobster&family=Roboto:wght@500&family=Special+Elite&family=Yellowtail&display=swap"
+    rel="stylesheet">
 
 </head>
 
@@ -47,7 +49,7 @@
       </div>
   </header>
   <main>
-      
+
     <!-- Game Board Render -->
   <div class="column-layout">
     <div class="main-column">
@@ -58,7 +60,10 @@
         <input type="text" id="guessText" value=""> -->
       <section id="wordGenerator"></section>
         <input type="text" value="" placeholder="Start typing..." id="guessText" autofocus>
-      <button onclick="wordGuess()" onkeypress="wordGuess()">Submit</button>
+
+      <!-- <button onclick="wordGuess()" onkeyup="wordGuess()">Submit</button> -->
+      <button id="gameButton" onclick="wordGuess()">Submit</button>
+
       <p id="entry"> </p>
           
     <!-- Starting Game and Timer -->
@@ -107,5 +112,6 @@
         <a href="https://hitchhikers.fandom.com/wiki/Hyperspace">GET ME OUT OF HERE</a>
       </div>
     </footer>
-  </body>
+</body>
+
 </html>
