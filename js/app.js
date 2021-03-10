@@ -22,6 +22,14 @@ const wordList = ['mask', 'pizza', 'covid', 'pliers', 'camera', 'vacuum',
   'pizazz', 'library', 'channel', 'vaccine', 'suburban', 'cemetery', 'calendar', 'separate', 'misspell', 'argument', 'assuming', 'definite', 'positive', 'negative', 'dachshund', 'necessary', 'possession', 'supposedly', 'quarantine', 'obstinance', 'millennium', 'processing', 'sovereignty', 'accommodate', 'fluorescent', 'mischievous', 'accidentally', 'questionnaire', 'pronunciation', 'capitalization'];
 
 
+// Index Page - Render Name to local Storage
+function renderName() {
+  let nameSubmit = document.getElementById('userName').value;
+  console.log(nameSubmit);
+  // let stringifiedWords = JSON.stringify(typedWords);
+  localStorage.setItem('userName', nameSubmit);
+}
+
 
 
 function startGame() {
