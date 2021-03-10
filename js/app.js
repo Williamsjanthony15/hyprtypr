@@ -18,10 +18,10 @@ let timer;
 let startTimer = document.getElementById('start');
 
 
-// const wordList = ['mask', 'pizza', 'covid', 'pliers', 'camera', 'vacuum',
-//   'pizazz', 'library', 'channel', 'vaccine', 'suburban', 'cemetery', 'calendar', 'separate', 'misspell', 'argument', 'assuming', 'definite', 'positive', 'negative', 'dachshund', 'necessary', 'possession', 'supposedly', 'quarantine', 'obstinance', 'millennium', 'processing', 'sovereignty', 'accommodate', 'fluorescent', 'mischievous', 'accidentally', 'questionnaire', 'pronunciation', 'capitalization'];
+const wordList = ['mask', 'pizza', 'covid', 'pliers', 'camera', 'vacuum',
+  'pizazz', 'library', 'channel', 'vaccine', 'suburban', 'cemetery', 'calendar', 'separate', 'misspell', 'argument', 'assuming', 'definite', 'positive', 'negative', 'dachshund', 'necessary', 'possession', 'supposedly', 'quarantine', 'obstinance', 'millennium', 'processing', 'sovereignty', 'accommodate', 'fluorescent', 'mischievous', 'accidentally', 'questionnaire', 'pronunciation', 'capitalization'];
 
-  const wordList = ['mask', 'pizza', 'covid', 'pliers', 'camera', 'vacuum',];
+
 
 
 function startGame() {
