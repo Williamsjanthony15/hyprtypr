@@ -34,12 +34,12 @@ const wordList = ['mask', 'pizza', 'covid', 'pliers', 'camera', 'vacuum',
 // console.log(wordList);
 
 // Index Page - Render Name to local Storage
-// let nameLol = console.log('my Name');
-// function renderName() {
-//   document.getElementById('submitName').localStorage.setItem('User Name', nameLol);
-// }
-
-// renderName();
+function renderName() {
+  let nameSubmit = document.getElementById('userName').value;
+  console.log(nameSubmit);
+  // let stringifiedWords = JSON.stringify(typedWords);
+  localStorage.setItem('userName', nameSubmit);
+}
 
 // Game Page
 
