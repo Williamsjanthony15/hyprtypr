@@ -1,17 +1,5 @@
 'use strict';
 
-console.log('WWLND');
-
-// --- TODO  ---
-// Username 
-// Local Storage 
-// Game Logic  ---- 
-// Word Generator - Array (Hard Coded words) // DONE
-// Appending Words to table
-// Hangman Generator (pictures)
-// Scoring method
-// stretch goal -- Adding nested for loops seperate arrays
-
 let countdown = document.getElementById('time');
 let timeRemaining = document.getElementById('timeRemaining');
 let word = document.querySelector('word');
@@ -25,54 +13,52 @@ let typedWords = [];
 let username = 'Tyler';
 let usernameArray = [];
 let timePerWord = '10';
-// let remaining = 10;
+let count = 0;
+let timer;
 let startTimer = document.getElementById('start');
 
 
 const wordList = ['mask', 'pizza', 'covid', 'pliers', 'camera', 'vacuum',
   'pizazz', 'library', 'channel', 'vaccine', 'suburban', 'cemetery', 'calendar', 'separate', 'misspell', 'argument', 'assuming', 'definite', 'positive', 'negative', 'dachshund', 'necessary', 'possession', 'supposedly', 'quarantine', 'obstinance', 'millennium', 'processing', 'sovereignty', 'accommodate', 'fluorescent', 'mischievous', 'accidentally', 'questionnaire', 'pronunciation', 'capitalization'];
-// console.log(wordList);
 
-// Index Page - Render Name to local Storage
-// let nameLol = console.log('my Name');
-// function renderName() {
-//   document.getElementById('submitName').localStorage.setItem('User Name', nameLol);
-// }
 
-// renderName();
 
-// Game Page
 
 function startGame() {
-  let timer = setInterval(function () {
-    startTimer.disabled = false;
+  console.log(timePerWord);
+  count++;
+  timer = setInterval(function () {
+    startTimer.disabled = true;
     timePerWord--;
     countdown.innerHTML = timePerWord;
+    console.log(countdown);
     if (timePerWord === 0) {
-      console.log(points);
-      // score.innerHTML = '0';
-      // wordList.innerHTML = '';
-      timeRemaining.innerHTML = '10';
       startTimer.disabled = true;
+      clearInterval(timer);
+      if (count < wordList.length) {
+        wordGuess();
+        startGame();
+      }
     }
   }, 1000);
   startTimer.removeEventListener('click', startGame);
+  if (timePerWord === 0) {
+    console.log(timePerWord);
+  }
 }
 
 
 
 
-
-
-//word generator and score -dj
 function wordGuess() {
   var guessEntry = document.getElementById('guessText').value.toUpperCase();
-  console.log(totalGuess);
+  // console.log(guessEntry, wordList[totalGuess].toUpperCase);
   document.getElementById('entry').innerHTML = guessEntry;
   // renderWordGenerator();
-  console.log(guessEntry, wordList[totalGuess]);
+  console.log(guessEntry, wordList[totalGuess].toUpperCase());
   if (guessEntry === wordList[totalGuess].toUpperCase()) {
     score++;
+
     console.log('Great Success',score);
   }
   totalGuess++;
@@ -83,7 +69,7 @@ function wordGuess() {
   timePerWord = 11;
 }
 
-<<<<<<< HEAD
+
 let gameInput = document.getElementById('guessText');
 gameInput.addEventListener("keyup", function(e){
   e.preventDefault();
@@ -93,17 +79,28 @@ gameInput.addEventListener("keyup", function(e){
     entry.click();
   }
 });
-=======
-// var input = document.getElementById('wordGuess');
-// input.addEventListener('onKeyUp') {
-//   if (keyCode === 13) {
-//     preventDefault();
-//     document.getElementById('gameButton').click();
-//   }
-// }
->>>>>>> 1e00c5d809b42ff9b6f1a5ef98c5fd0e7b787f35
+
 
 //to be added at end of game to store
+
+    document.getElementById('score').innerHTML = score;
+    console.log('success');
+  }
+  totalGuess++;
+  if (wordList[totalGuess]) {
+    document.getElementById('guessText').value = '';
+    document.getElementById('wordGenerator').innerHTML = wordList[totalGuess];
+    typedWords.push(guessEntry);
+    timePerWord = 11;
+  } else {
+    clearInterval(timer);
+    document.getElementById('guessText').value = '';
+    document.getElementById('wordGenerator').innerHTML = 'No more words remaining';
+  }
+}
+
+
+
 let stringifiedWords = JSON.stringify(typedWords);
 localStorage.setItem('typedWords', stringifiedWords);
 let stringifiedScore = JSON.stringify(allScores);
@@ -111,20 +108,8 @@ localStorage.setItem('all scores', stringifiedScore);
 
 
 
-startTimer.addEventListener("click", startGame);
+startTimer.addEventListener('click', startGame);
 
-
-
-
-
-// startGame();
-
-
-
-
-
-
-// LeaderBoard Page
 
 //constructor to generate allScores array
 //will then be saved to local storage
@@ -133,6 +118,7 @@ function Leaderboard(username, score) {
   this.score = score;
   allScores.push(this);
 }
+
 
 //render leaderboard table to the DOM
 // function renderLeaderboardHeader() {
@@ -144,6 +130,7 @@ function Leaderboard(username, score) {
 //   header.appendChild(thUser);
 //   header.appendChild(thScore);
 // }
+
 
 // let retrievedUsers = localStorage.getItem('username');
 
@@ -161,20 +148,21 @@ function Leaderboard(username, score) {
 // }
 
 
-// word generator word-dj
-
-
 function renderWordGenerator() {
   document.getElementById('wordGenerator').innerHTML = wordList[totalGuess];
-
 }
+
 
 renderWordGenerator();
 wordGuess();
 
+startTimer.addEventListener('click', startGame);
+
+
+
+renderWordGenerator();
 // function renderLeaderboardScores
 new Leaderboard('tyler', 10);
 renderLeaderboardHeader();
 renderLeaderboardScores();
-
 
