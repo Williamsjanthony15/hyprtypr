@@ -32,6 +32,9 @@
       </div>
       <div class="header-section-2">
         <h1>Hypr Typr</h1>
+        <div>
+          <h2>Type as if your life depends on it!</h2>
+        </div>
       </div>
       <div class="header-section-3">
         <div class="keyright">
@@ -43,7 +46,7 @@
           <key id="key-q">Q</key>
         </div>
       </div>
-        <h2>Type as if your neck is on the line</h2>
+        
   </header>
 <!-- </div> -->
   <main>
@@ -73,6 +76,18 @@
 <!-- </div> -->
 
 <!-- sixth example -->
+<div class="name-input">
+  <form action="">
+    <div class="form-row">
+
+      <label for="userName">We're happy that you are here. What's your name?</label>
+      <input type="text" id="userName" placeholder="Name..." autofocus>
+      <button onkeypress="renderName()" id="submitName">Lets Go!</button>
+
+    </div>
+  </form>
+</div>
+
 <div class="equal-height-container">
   <div class="first">
     <p>Instructions:</p>
@@ -86,14 +101,26 @@
 </div>    
 
 
+
  <div class="name-input">
-  <form action="">
+  <!-- <form>
     <div class="form-row">
+      <fieldset>
       <label for="userName">We're happy that you are here. What's your name?</label>
       <input type="text" id="userName">
+
+      <button type="submit">Lets Go!</button>
+      </fieldset> 
+
+      <button onkeypress="renderName()" id="submitName">Lets Go!</button> 
+
+
     </div>
-  </form>
+  </form> -->
+  <input type="text" id="userName">
+  <a onclick="renderName()" onkeypress="renderName()" href="game.html">Lets Go!</a>
 </div>
+
   </section>
   </main>
     <!-- <section>
