@@ -59,6 +59,15 @@ input {
   font-family: 'Roboto Condensed', sans-serif;
 }
 
+<<<<<<< HEAD
+.intro {
+  font-family: 'Lobster', cursive;
+  font-size: 1.5em; 
+  text-align: center;
+  width: 100%;
+  color: white;
+}
+=======
 table {
   border-collapse: collapse;
 }
@@ -70,6 +79,7 @@ td {
   text-align: left;
 }
 
+>>>>>>> e161073eb7ec202cdb6ab61c1c584f0ee172d135
 /* Start Button */
 /* label {
   display: block;
