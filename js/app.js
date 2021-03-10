@@ -111,7 +111,7 @@ function Leaderboard(username, score) {
   this.username = username;
   this.score = score;
   allScores.push(this);
-};
+}
 
 
 //render leaderboard table to the DOM
