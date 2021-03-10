@@ -35,9 +35,9 @@ const wordList = ['mask', 'pizza', 'covid', 'pliers', 'camera', 'vacuum',
 
 // Index Page - Render Name to local Storage
 // let nameLol = console.log('my Name');
-// function renderName() {
-//   document.getElementById('submitName').localStorage.setItem('User Name', nameLol);
-// }
+function renderName() {
+  document.getElementById('submitName').localStorage.setItem('User Name', nameLol);
+}
 
 // renderName();
 
@@ -111,7 +111,7 @@ function Leaderboard(username, score) {
   this.username = username;
   this.score = score;
   allScores.push(this);
-};
+}
 
 
 //render leaderboard table to the DOM
