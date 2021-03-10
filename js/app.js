@@ -67,7 +67,7 @@ function wordGuess() {
   if (guessEntry === wordList[totalGuess].toUpperCase()) {
     score++;
 
-    console.log('Great Success',score);
+    console.log('Great Success', score);
   }
   totalGuess++;
 
@@ -79,10 +79,10 @@ function wordGuess() {
 
 
 let gameInput = document.getElementById('guessText');
-gameInput.addEventListener("keyup", function(e){
+gameInput.addEventListener("keyup", function (e) {
   e.preventDefault();
   console.log(e);
-  if(e.key === "Enter") {
+  if (e.key === "Enter") {
     let entry = document.getElementById('gameButton');
     entry.click();
   }
@@ -91,28 +91,28 @@ gameInput.addEventListener("keyup", function(e){
 
 //to be added at end of game to store
 
-    document.getElementById('score').innerHTML = score;
-    console.log('success');
-  }
-  totalGuess++;
-  if (wordList[totalGuess]) {
-    document.getElementById('guessText').value = '';
-    document.getElementById('wordGenerator').innerHTML = wordList[totalGuess];
-    typedWords.push(guessEntry);
-    timePerWord = 11;
-  } else {
-    clearInterval(timer);
-    document.getElementById('guessText').value = '';
-    document.getElementById('wordGenerator').innerHTML = 'No more words remaining';
-  }
+document.getElementById('score').innerHTML = score;
+console.log('success');
+
+totalGuess++;
+if (wordList[totalGuess]) {
+  document.getElementById('guessText').value = '';
+  document.getElementById('wordGenerator').innerHTML = wordList[totalGuess];
+  typedWords.push(guessEntry);
+  timePerWord = 11;
+} else {
+  clearInterval(timer);
+  document.getElementById('guessText').value = '';
+  document.getElementById('wordGenerator').innerHTML = 'No more words remaining';
 }
 
 
 
-let stringifiedWords = JSON.stringify(typedWords);
-localStorage.setItem('typedWords', stringifiedWords);
-let stringifiedScore = JSON.stringify(allScores);
-localStorage.setItem('all scores', stringifiedScore);
+
+// let stringifiedWords = JSON.stringify(typedWords);
+// localStorage.setItem('typedWords', stringifiedWords);
+// let stringifiedScore = JSON.stringify(allScores);
+// localStorage.setItem('all scores', stringifiedScore);
 
 
 
@@ -128,16 +128,16 @@ function Leaderboard(username, score) {
 }
 
 
-//render leaderboard table to the DOM
-// function renderLeaderboardHeader() {
-//   let header = document.getElementById('leaderboard-table');
-//   let thUser = document.createElement('th');
-//   thUser.textContent = 'Player';
-//   let thScore = document.createElement('th');
-//   thScore.textContent = 'Score';
-//   header.appendChild(thUser);
-//   header.appendChild(thScore);
-// }
+// render leaderboard table to the DOM
+function renderLeaderboardHeader() {
+  let header = document.getElementById('leaderboard-table');
+  let thUser = document.createElement('th');
+  thUser.textContent = 'Player';
+  let thScore = document.createElement('th');
+  thScore.textContent = 'Score';
+  header.appendChild(thUser);
+  header.appendChild(thScore);
+}
 
 
 // let retrievedUsers = localStorage.getItem('username');
@@ -166,11 +166,6 @@ wordGuess();
 
 startTimer.addEventListener('click', startGame);
 
-
-
-renderWordGenerator();
-// function renderLeaderboardScores
-new Leaderboard('tyler', 10);
 renderLeaderboardHeader();
 renderLeaderboardScores();
 
