@@ -25,13 +25,21 @@ let typedWords = [];
 let username = 'Tyler';
 let usernameArray = [];
 let timePerWord = '10';
-let remaining = 10;
+// let remaining = 10;
 let startTimer = document.getElementById('start');
 
 
 const wordList = ['mask', 'pizza', 'covid', 'pliers', 'camera', 'vacuum',
   'pizazz', 'library', 'channel', 'vaccine', 'suburban', 'cemetery', 'calendar', 'separate', 'misspell', 'argument', 'assuming', 'definite', 'positive', 'negative', 'dachshund', 'necessary', 'possession', 'supposedly', 'quarantine', 'obstinance', 'millennium', 'processing', 'sovereignty', 'accommodate', 'fluorescent', 'mischievous', 'accidentally', 'questionnaire', 'pronunciation', 'capitalization'];
 // console.log(wordList);
+
+// Index Page - Render Name to local Storage
+// let nameLol = console.log('my Name');
+// function renderName() {
+//   document.getElementById('submitName').localStorage.setItem('User Name', nameLol);
+// }
+
+// renderName();
 
 // Game Page
 
@@ -65,24 +73,12 @@ function wordGuess() {
   console.log(guessEntry, wordList[totalGuess]);
   if (guessEntry === wordList[totalGuess].toUpperCase()) {
     score++;
-    console.log("success");
+    console.log('success');
   }
   totalGuess++;
   document.getElementById('guessText').value = '';
   document.getElementById('wordGenerator').innerHTML = wordList[totalGuess];
   typedWords.push(guessEntry);
-  // let timer = setInterval(function () {
-  //   startTimer.disabled = false;
-  //   timePerWord--;
-  //   countdown.innerHTML = timePerWord;
-  //   if (timePerWord === 0) {
-  //     console.log(points);
-  //     // score.innerHTML = '0';
-  //     // wordList.innerHTML = '';
-  //     timeRemaining.innerHTML = '10';
-  //     startTimer.disabled = false;
-  //   }
-  // }, 1000);
   timePerWord = 11;
 }
 
@@ -116,6 +112,7 @@ function Leaderboard(username, score) {
   this.score = score;
   allScores.push(this);
 };
+
 
 //render leaderboard table to the DOM
 function renderLeaderboardHeader() {
@@ -157,7 +154,6 @@ renderWordGenerator();
 
 // function renderLeaderboardScores
 new Leaderboard('tyler', 10);
-
 renderLeaderboardHeader();
 renderLeaderboardScores();
 
