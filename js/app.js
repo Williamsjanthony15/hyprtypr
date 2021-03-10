@@ -73,7 +73,7 @@ function wordGuess() {
   console.log(guessEntry, wordList[totalGuess]);
   if (guessEntry === wordList[totalGuess].toUpperCase()) {
     score++;
-    console.log('success');
+    console.log('Great Success',score);
   }
   totalGuess++;
   document.getElementById('guessText').value = '';
@@ -81,6 +81,16 @@ function wordGuess() {
   typedWords.push(guessEntry);
   timePerWord = 11;
 }
+
+let gameInput = document.getElementById('guessText');
+gameInput.addEventListener("keyup", function(e){
+  e.preventDefault();
+  console.log(e);
+  if(e.key === "Enter") {
+    let entry = document.getElementById('gameButton');
+    entry.click();
+  }
+});
 
 //to be added at end of game to store
 let stringifiedWords = JSON.stringify(typedWords);
@@ -156,4 +166,5 @@ renderWordGenerator();
 new Leaderboard('tyler', 10);
 renderLeaderboardHeader();
 renderLeaderboardScores();
+
 
