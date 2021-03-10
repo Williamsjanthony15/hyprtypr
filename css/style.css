@@ -59,7 +59,13 @@ input {
   font-family: 'Roboto Condensed', sans-serif;
 }
 
-
+.intro {
+  font-family: 'Lobster', cursive;
+  font-size: 1.5em; 
+  text-align: center;
+  width: 100%;
+  color: white;
+}
 /* Start Button */
 /* label {
   display: block;

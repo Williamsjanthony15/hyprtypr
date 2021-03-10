@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,7 +12,9 @@
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/style.css">
   <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Lobster&family=Roboto:wght@500&family=Special+Elite&family=Yellowtail&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lobster&family=Roboto:wght@500&family=Special+Elite&family=Yellowtail&display=swap"
+    rel="stylesheet">
 
 </head>
 
@@ -42,63 +44,64 @@
           <key id="key-q">Q</key>
         </div>
       </div>
-        <h2>Type as if your neck is on the line</h2>
+      <h2 class="intro">Type as if your neck is on the line</h2>
   </header>
   <main>
-      
+
     <!-- Game Board Render -->
-  <div class="column-layout">
-    <div class="main-column">
-      <h2>Game Board</h2>
-      
-    </div>
+    <div class="column-layout">
+      <div class="main-column">
+        <h2>Game Board</h2>
 
-    <!-- Timer Graphic Render -->
-    <div class="sidebar-one">
-      <h3>Round Timer</h3>
-      <div id="timeRemaining">
-        <p>Time Left</p>
-        <span id="time">10</span>
       </div>
-    </div>
-    
-    <!--Plank Graphic Render  -->
-    <div class="sidebar-two">
-      <h3>Walk the Plank!</h3>
-      <img src="https://www.clipartmax.com/png/small/148-1485592_pirate-walk-the-plank-800-clr-pirate-walk-the-plank.png" alt="Pirate Walk The Plank 800 Clr - Pirate Walk The Plank @clipartmax.com">
-    </div>
-  </div>
 
-      <h2>(another Title)</h2>
-    <section id="wordGenerator"></section>
-          <input type="text" id="guessText" value="">
-    <button onclick="wordGuess()" onkeyup="wordGuess()">Submit</button>
-    <p id="entry"> </p>
-
-<<<<<<< HEAD
-
-=======
->>>>>>> 7aab664189caacb3ad74135dd476e24fcb7ec680
-    <!-- Starting Game and Timer -->
-    <section id="startGame" >
-    <button id="start">Start</button>
-        <div id="scoreDiv">
-          <p>Score</p>
-          <span id="score">0</span>
-        </div>
+      <!-- Timer Graphic Render -->
+      <div class="sidebar-one">
+        <h3>Round Timer</h3>
         <div id="timeRemaining">
           <p>Time Left</p>
           <span id="time">10</span>
         </div>
-        <div>
-          <p id="words"></p>
-        </div>
-      </section>
+      </div>
+
+      <!--Plank Graphic Render  -->
+      <div class="sidebar-two">
+        <h3>Walk the Plank!</h3>
+        <img
+          src="https://www.clipartmax.com/png/small/148-1485592_pirate-walk-the-plank-800-clr-pirate-walk-the-plank.png"
+          alt="Pirate Walk The Plank 800 Clr - Pirate Walk The Plank @clipartmax.com">
+      </div>
+    </div>
+
+    <h2>Word to Type</h2>
+    <section id="wordGenerator"></section>
+    <!--  -->
+    <!-- <button type="button" onclick="wordGuess();">Submit</button> -->
+    <form id="entry">
+      <input type="text" id="guessText" value="">
+<button onkeypress="renderWordGenerator();">Submit</button>
+
+    </form>
+    <!-- Starting Game and Timer -->
+    <section id="startGame">
+      <button id="start">Start</button>
+      <div id="scoreDiv">
+        <p>Score</p>
+        <span id="score">0</span>
+      </div>
+      <div id="timeRemaining">
+        <p>Time Left</p>
+        <span id="time">10</span>
+      </div>
+      <div>
+        <p id="words"></p>
+      </div>
+    </section>
 
 
-    </main>
-    <script src = js/app.js> </script>
-    <footer>
+  </main>
+  <script src=js/app.js> </script>
+  <footer>
     <footer id="footer">
       <div class="navbar">
         <a href="index.html">HOME</a>
@@ -108,5 +111,6 @@
         <a href="https://hitchhikers.fandom.com/wiki/Hyperspace">GET ME OUT OF HERE</a>
       </div>
     </footer>
-  </body>
+</body>
+
 </html>
