@@ -10,9 +10,10 @@
   <link rel="shortcut icon" href="../../docs-assets/ico/favicon.png">
   <title>HyprTypr</title>
   <link rel="stylesheet" href="css/reset.css">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/game.css">
   <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Roboto+Condensed:wght@700&family=Special+Elite&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Lobster&family=Roboto:wght@500&family=Special+Elite&family=Yellowtail&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
@@ -30,6 +31,9 @@
       </div>
       <div class="header-section-2">
         <h1>Hypr Typr</h1>
+        <div>
+          <h2>Type as if your life depends on it!</h2>
+        </div>
       </div>
       <div class="header-section-3">
         <div class="keyright">
@@ -41,54 +45,55 @@
           <key id="key-q">Q</key>
         </div>
       </div>
-        <h2>Type as if your neck is on the line</h2>
   </header>
   <main>
       
     <!-- Game Board Render -->
   <div class="column-layout">
     <div class="main-column">
-      <h2>Main Column</h2>
-      <p>This is a typing game for horrible people that want to learn to type more good and have fun while learning. Typing is an essential tool whether you’re coding or writing an email to a loved one.</p>
-      <p>The more accurately you are able to type quickly, you will have advantage over others, and maybe you’ll email your mother more often…</p>
-    </div>
-
-    <!-- Timer Graphic Render -->
-    <div class="sidebar-one">
-      <h3>Round Timer</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum modi nisi tenetur sint dignissimos nulla, blanditiis nesciunt.</p>
-    </div>
-
-    <!--Plank Graphic Render  -->
-    <div class="sidebar-two">
-      <h3>Walk the Plank!</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum modi nisi tenetur sint dignissimos nulla, blanditiis nesciunt.</p>
-    </div>
-  </div>
-
-      <h2>(another Title)</h2>
-    <section id="wordGenerator"></section>
-          <input type="text" id="guessText" value="">
-    <button onclick="wordGuess()" onkeyup="wordGuess()">Submit</button>
-    <p id="entry"> </p>
-
-
+      
+    <!-- Word & Input -->
+      <h2>Type the given word within 10 seconds:</h2>
+      <!-- <section id="wordGenerator"></section>
+        <input type="text" id="guessText" value=""> -->
+      <section id="wordGenerator"></section>
+        <input type="text" value="" placeholder="Start typing..." id="guessText" autofocus>
+      <button onclick="wordGuess()" onkeyup="wordGuess()">Submit</button>
+      <p id="entry"> </p>
+          
     <!-- Starting Game and Timer -->
-    <section id="startGame" >
-    <button id="start">Start</button>
+      <section id="startGame" >
+      <button id="start">Start</button>
         <div id="scoreDiv">
           <p>Score</p>
           <span id="score">0</span>
         </div>
-        <div id="timeRemaining">
+        <!-- <div id="timeRemaining">
           <p>Time Left</p>
           <span id="time">10</span>
-        </div>
+        </div> -->
         <div>
           <p id="words"></p>
         </div>
-      </section>
+      </section>    
 
+    </div> 
+                
+  <!-- Timer Graphic Render -->
+    <div class="sidebar-one">
+      <h3>Round Timer</h3>
+      <div id="timeRemaining">
+        <p>Seconds:</p>
+        <span id="time">10</span>
+      </div>
+    </div>
+    
+  <!-- Plank Graphic Render  -->
+    <div class="sidebar-two">
+      <h3>Walk the Plank!</h3>
+      <img src="https://www.clipartmax.com/png/small/148-1485592_pirate-walk-the-plank-800-clr-pirate-walk-the-plank.png" alt="Pirate Walk The Plank 800 Clr - Pirate Walk The Plank @clipartmax.com">
+    </div>
+  </div>
 
     </main>
     <script src = js/app.js> </script>
