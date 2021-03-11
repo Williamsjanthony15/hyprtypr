@@ -108,6 +108,14 @@ main {
   max-width: 760px;
 }
 
+a {
+  color: white;
+}
+
+label {
+  text-align: left;
+}
+
 /* Name Input Box */
 .name-input {
   max-width: 750px;
@@ -154,6 +162,12 @@ main {
   flex: 1;
   order: 3;
 }
+
+.wrong-words {
+  flex: 1;
+}
+
+
 
 /* third example */
 .call-outs-container {
