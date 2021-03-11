@@ -8,7 +8,7 @@ let points = 0;
 let totalGuess = 0;
 let wrongGuess = 10;
 let score = 0;
-let allScores = [];
+let allScores= JSON.parse(localStorage.getItem('Allusers')) || [];
 let typedWords = [];
 let username = 'Tyler';
 let usernameArray = [];
@@ -18,13 +18,14 @@ let timer;
 let startTimer = document.getElementById('start');
 
 
-const wordList = ['mask', 'pizza', 'covid', 'pliers', 'camera', 'vacuum',
-  'pizazz', 'library', 'channel', 'vaccine', 'suburban', 'cemetery', 'calendar', 'separate', 'misspell', 'argument', 'assuming', 'definite', 'positive', 'negative', 'dachshund', 'necessary', 'possession', 'supposedly', 'quarantine', 'obstinance', 'millennium', 'processing', 'sovereignty', 'accommodate', 'fluorescent', 'mischievous', 'accidentally', 'questionnaire', 'pronunciation', 'capitalization'];
+// const wordList = ['mask', 'pizza', 'covid', 'pliers', 'camera', 'vacuum',
+//   'pizazz', 'library', 'channel', 'vaccine', 'suburban', 'cemetery', 'calendar', 'separate', 'misspell', 'argument', 'assuming', 'definite', 'positive', 'negative', 'dachshund', 'necessary', 'possession', 'supposedly', 'quarantine', 'obstinance', 'millennium', 'processing', 'sovereignty', 'accommodate', 'fluorescent', 'mischievous', 'accidentally', 'questionnaire', 'pronunciation', 'capitalization'];
 
+  const wordList = ['mask', 'pizza', 'covid', 'pliers', 'camera', 'vacuum'];
 
 function renderName() {
   let nameSubmit = document.getElementById('userName').value;
-  console.log(nameSubmit);
+  // console.log(nameSubmit);
   // let stringifiedWords = JSON.stringify(typedWords);
   localStorage.setItem('userName', nameSubmit);
 }
@@ -32,13 +33,13 @@ function renderName() {
 
 
 function startGame() {
-  console.log(timePerWord);
+  // console.log(timePerWord);
   count++;
   timer = setInterval(function () {
     startTimer.disabled = true;
     timePerWord--;
     countdown.innerHTML = timePerWord;
-    console.log(countdown);
+    // console.log(countdown);
     if (timePerWord === 0) {
       startTimer.disabled = true;
       clearInterval(timer);
@@ -50,7 +51,7 @@ function startGame() {
   }, 1000);
   startTimer.removeEventListener('click', startGame);
   if (timePerWord === 0) {
-    console.log(timePerWord);
+    // console.log(timePerWord);
   }
 }
 
@@ -64,7 +65,7 @@ function wordGuess() {
   if (guessEntry === wordList[totalGuess].toUpperCase()) {
     score++;
     totalGuess++;
-    console.log('Great Success', score);
+    // console.log('Great Success', score);
   }
   document.getElementById('score').innerHTML = score;
   document.getElementById('guessText').value = '';
@@ -77,7 +78,7 @@ function wordGuess() {
 let gameInput = document.getElementById('guessText');
 gameInput.addEventListener('keyup', function (e) {
   e.preventDefault();
-  console.log(e);
+  // console.log(e);
   if (e.key === 'Enter') {
     let entry = document.getElementById('gameButton');
     entry.click();
@@ -93,6 +94,9 @@ if (wordList[totalGuess]) {
   timePerWord = 11;
 } else {
   clearInterval(timer);
+  new Leaderboard(username, score);
+  console.log(username,score,allScores);
+  localStorage.setItem('Allusers', JSON.stringify(allScores));
   document.getElementById('guessText').value = '';
   document.getElementById('wordGenerator').innerHTML = 'No more words remaining';
 }
@@ -118,30 +122,21 @@ function Leaderboard(username, score) {
 }
 
 
-// render leaderboard table to the DOM
-// function renderLeaderboardHeader() {
-//   let header = document.getElementById('leaderboard-table');
-//   let thUser = document.createElement('th');
-//   thUser.textContent = 'Player';
-//   let thScore = document.createElement('th');
-//   thScore.textContent = 'Score';
-//   header.appendChild(thUser);
-//   header.appendChild(thScore);
-// }
-
 
 let retrievedUsers = localStorage.getItem('username');
 
 function renderLeaderboardScores() {
   // let retrievedUsers = usernameArray;
-  let tbody = document.getElementById('leaderboard-table');
+  let tbody = document.getElementById('leaderboard-table').children[1];
   for (let i = 0; i < allScores.length; i++) {
     let trUser = document.createElement('tr');
-    trUser.textContent = allScores[i].username;
-    tbody.appendChild(trUser);
+    let td = document.createElement('td');
+    td.textContent = allScores[i].username;
+    trUser.appendChild(td);
     let trScore = document.createElement('td');
-    trUser.appendChild(trScore);
     trScore.textContent = allScores[i].score;
+    trUser.appendChild(trScore);
+    tbody.appendChild(trUser);
   }
 }
 
@@ -159,8 +154,5 @@ startTimer.addEventListener('click', startGame);
 
 
 renderWordGenerator();
-// function renderLeaderboardScores
-// new Leaderboard('tyler', 10);
-// renderLeaderboardHeader();
 renderLeaderboardScores();
 
