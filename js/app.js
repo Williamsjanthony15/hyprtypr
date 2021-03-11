@@ -1,5 +1,4 @@
 'use strict';
-
 let countdown = document.getElementById('time');
 let timeRemaining = document.getElementById('timeRemaining');
 let word = document.querySelector('word');
@@ -10,28 +9,23 @@ let wrongGuess = 10;
 let score = 0;
 let allScores= JSON.parse(localStorage.getItem('Allusers')) || [];
 let typedWords = [];
-let username = 'Tyler';
+let username = JSON.parse(localStorage.getItem('userName')) || "";
 let usernameArray = [];
 let timePerWord = '10';
 let count = 0;
 let timer;
 let startTimer = document.getElementById('start');
-
-
 // const wordList = ['mask', 'pizza', 'covid', 'pliers', 'camera', 'vacuum',
 //   'pizazz', 'library', 'channel', 'vaccine', 'suburban', 'cemetery', 'calendar', 'separate', 'misspell', 'argument', 'assuming', 'definite', 'positive', 'negative', 'dachshund', 'necessary', 'possession', 'supposedly', 'quarantine', 'obstinance', 'millennium', 'processing', 'sovereignty', 'accommodate', 'fluorescent', 'mischievous', 'accidentally', 'questionnaire', 'pronunciation', 'capitalization'];
-
   const wordList = ['mask', 'pizza', 'covid', 'pliers', 'camera', 'vacuum'];
-
 function renderName() {
   let nameSubmit = document.getElementById('userName').value;
-  // console.log(nameSubmit);
+  console.log(nameSubmit);
   // let stringifiedWords = JSON.stringify(typedWords);
-  localStorage.setItem('userName', nameSubmit);
+  // username = nameSubmit;
+  console.log(username)
+  localStorage.setItem('userName', JSON.stringify(nameSubmit));
 }
-
-
-
 function startGame() {
   // console.log(timePerWord);
   count++;
@@ -54,10 +48,6 @@ function startGame() {
     // console.log(timePerWord);
   }
 }
-
-
-
-
 function wordGuess() {
   var guessEntry = document.getElementById('guessText').value.toUpperCase();
   document.getElementById('entry').innerHTML = guessEntry;
@@ -69,25 +59,10 @@ function wordGuess() {
   }
   document.getElementById('score').innerHTML = score;
   document.getElementById('guessText').value = '';
-  document.getElementById('wordGenerator').innerHTML = wordList[totalGuess];
-  typedWords.push(guessEntry);
-  timePerWord = 11;
-}
-
-
-let gameInput = document.getElementById('guessText');
-gameInput.addEventListener('keyup', function (e) {
-  e.preventDefault();
-  // console.log(e);
-  if (e.key === 'Enter') {
-    let entry = document.getElementById('gameButton');
-    entry.click();
-  }
-});
-
-
-// document.getElementById('score').innerHTML = score;
-console.log('success');
+  // document.getElementById('wordGenerator').innerHTML = wordList[totalGuess];
+  // typedWords.push(guessEntry);
+  // timePerWord = 11;
+  // console.log('success');
 if (wordList[totalGuess]) {
   document.getElementById('guessText').value = '';
   document.getElementById('wordGenerator').innerHTML = wordList[totalGuess];
@@ -100,34 +75,32 @@ if (wordList[totalGuess]) {
   document.getElementById('guessText').value = '';
   document.getElementById('wordGenerator').innerHTML = 'No more words remaining';
 }
-
-
-
-
+}
+let gameInput = document.getElementById('guessText');
+gameInput.addEventListener('keyup', function (e) {
+  e.preventDefault();
+  // console.log(e);
+  if (e.key === 'Enter') {
+    let entry = document.getElementById('gameButton');
+    entry.click();
+  }
+});
+// document.getElementById('score').innerHTML = score;
 let stringifiedWords = JSON.stringify(typedWords);
 localStorage.setItem('typedWords', stringifiedWords);
 let stringifiedScore = JSON.stringify(allScores);
 localStorage.setItem('all scores', stringifiedScore);
-
-
-
 startTimer.addEventListener('click', startGame);
-
-
-
 function Leaderboard(username, score) {
   this.username = username;
   this.score = score;
   allScores.push(this);
 }
-
-
-
 let retrievedUsers = localStorage.getItem('username');
-
 function renderLeaderboardScores() {
   // let retrievedUsers = usernameArray;
   let tbody = document.getElementById('leaderboard-table').children[1];
+  console.log(tbody);
   for (let i = 0; i < allScores.length; i++) {
     let trUser = document.createElement('tr');
     let td = document.createElement('td');
@@ -139,20 +112,11 @@ function renderLeaderboardScores() {
     tbody.appendChild(trUser);
   }
 }
-
-
 function renderWordGenerator() {
   document.getElementById('wordGenerator').innerHTML = wordList[totalGuess];
 }
-
-
 renderWordGenerator();
 wordGuess();
-
 startTimer.addEventListener('click', startGame);
-
-
-
 renderWordGenerator();
 renderLeaderboardScores();
-
