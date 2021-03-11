@@ -22,7 +22,6 @@ const wordList = ['mask', 'pizza', 'covid', 'pliers', 'camera', 'vacuum',
   'pizazz', 'library', 'channel', 'vaccine', 'suburban', 'cemetery', 'calendar', 'separate', 'misspell', 'argument', 'assuming', 'definite', 'positive', 'negative', 'dachshund', 'necessary', 'possession', 'supposedly', 'quarantine', 'obstinance', 'millennium', 'processing', 'sovereignty', 'accommodate', 'fluorescent', 'mischievous', 'accidentally', 'questionnaire', 'pronunciation', 'capitalization'];
 
 
-// Index Page - Render Name to local Storage
 function renderName() {
   let nameSubmit = document.getElementById('userName').value;
   console.log(nameSubmit);
@@ -60,17 +59,14 @@ function startGame() {
 
 function wordGuess() {
   var guessEntry = document.getElementById('guessText').value.toUpperCase();
-  // console.log(guessEntry, wordList[totalGuess].toUpperCase);
   document.getElementById('entry').innerHTML = guessEntry;
   // renderWordGenerator();
-  console.log(guessEntry, wordList[totalGuess].toUpperCase());
   if (guessEntry === wordList[totalGuess].toUpperCase()) {
     score++;
-
-    console.log('Great Success',score);
+    totalGuess++;
+    console.log('Great Success', score);
   }
-  totalGuess++;
-
+  document.getElementById('score').innerHTML = score;
   document.getElementById('guessText').value = '';
   document.getElementById('wordGenerator').innerHTML = wordList[totalGuess];
   typedWords.push(guessEntry);
@@ -79,33 +75,28 @@ function wordGuess() {
 
 
 let gameInput = document.getElementById('guessText');
-gameInput.addEventListener("keyup", function(e){
+gameInput.addEventListener('keyup', function (e) {
   e.preventDefault();
   console.log(e);
-  if(e.key === "Enter") {
+  if (e.key === 'Enter') {
     let entry = document.getElementById('gameButton');
     entry.click();
   }
 });
 
 
-//to be added at end of game to store
-
-    document.getElementById('score').innerHTML = score;
-    console.log('success');
-  }
-  totalGuess++;
-  if (wordList[totalGuess]) {
-    document.getElementById('guessText').value = '';
-    document.getElementById('wordGenerator').innerHTML = wordList[totalGuess];
-    typedWords.push(guessEntry);
-    timePerWord = 11;
-  } else {
-    clearInterval(timer);
-    document.getElementById('guessText').value = '';
-    document.getElementById('wordGenerator').innerHTML = 'No more words remaining';
-  }
+// document.getElementById('score').innerHTML = score;
+console.log('success');
+if (wordList[totalGuess]) {
+  document.getElementById('guessText').value = '';
+  document.getElementById('wordGenerator').innerHTML = wordList[totalGuess];
+  timePerWord = 11;
+} else {
+  clearInterval(timer);
+  document.getElementById('guessText').value = '';
+  document.getElementById('wordGenerator').innerHTML = 'No more words remaining';
 }
+
 
 
 
@@ -119,8 +110,7 @@ localStorage.setItem('all scores', stringifiedScore);
 startTimer.addEventListener('click', startGame);
 
 
-//constructor to generate allScores array
-//will then be saved to local storage
+
 function Leaderboard(username, score) {
   this.username = username;
   this.score = score;
@@ -128,7 +118,7 @@ function Leaderboard(username, score) {
 }
 
 
-//render leaderboard table to the DOM
+// render leaderboard table to the DOM
 // function renderLeaderboardHeader() {
 //   let header = document.getElementById('leaderboard-table');
 //   let thUser = document.createElement('th');
@@ -140,20 +130,20 @@ function Leaderboard(username, score) {
 // }
 
 
-// let retrievedUsers = localStorage.getItem('username');
+let retrievedUsers = localStorage.getItem('username');
 
-// function renderLeaderboardScores() {
-//   // let retrievedUsers = usernameArray;
-//   let tbody = document.getElementById('leaderboard-table');
-//   for (let i = 0; i < allScores.length; i++) {
-//     let trUser = document.createElement('tr');
-//     trUser.textContent = allScores[i].username;
-//     tbody.appendChild(trUser);
-//     let trScore = document.createElement('td');
-//     trUser.appendChild(trScore);
-//     trScore.textContent = allScores[i].score;
-//   }
-// }
+function renderLeaderboardScores() {
+  // let retrievedUsers = usernameArray;
+  let tbody = document.getElementById('leaderboard-table');
+  for (let i = 0; i < allScores.length; i++) {
+    let trUser = document.createElement('tr');
+    trUser.textContent = allScores[i].username;
+    tbody.appendChild(trUser);
+    let trScore = document.createElement('td');
+    trUser.appendChild(trScore);
+    trScore.textContent = allScores[i].score;
+  }
+}
 
 
 function renderWordGenerator() {
@@ -170,7 +160,7 @@ startTimer.addEventListener('click', startGame);
 
 renderWordGenerator();
 // function renderLeaderboardScores
-new Leaderboard('tyler', 10);
-renderLeaderboardHeader();
+// new Leaderboard('tyler', 10);
+// renderLeaderboardHeader();
 renderLeaderboardScores();
 
